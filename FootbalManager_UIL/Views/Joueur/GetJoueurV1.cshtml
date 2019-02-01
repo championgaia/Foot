@@ -1,0 +1,106 @@
+﻿@using FootbalManager_UIL;
+@model ListJoueurViewModel
+
+@{
+    ViewBag.Title = "GetJoueur";
+}
+
+<h2>GetJoueur</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => "IdM")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => "NomJoueurM")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => "PrenomM")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => "DateNaissanceM")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => "DateDebutContratM")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model =>"DateFinContratM")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => "SalaireHebdomadaireM")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => "TailleM")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => "PoidM")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => "NomEquipeM")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => "NomPaysM")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => "NomContinentM")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => "NomPrenomAgentM")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.ListeJoueur) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomJoueurM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrenomM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateNaissanceM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateDebutContratM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateFinContratM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalaireHebdomadaireM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TailleM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PoidM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomEquipeM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomPaysM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomContinentM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomPrenomAgentM)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,62 @@
+﻿using JoueurFootBOL;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
+
+namespace JoueurFoot_UIL.Models
+{
+    #region JoueurModel
+    public class JoueurModel
+    {
+        public int IdM { get; set; }
+        public string NomJoueurM { get; set; }
+        public string PrenomM { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
+        public DateTime DateNaissanceM { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
+        public DateTime DateDebutContratM { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
+        public DateTime DateFinContratM { get; set; }
+        public int SalaireHebdomadaireM { get; set; }
+        public int? TailleM { get; set; }
+        public int? PoidM { get; set; }
+        public string PositionM { get; set; }
+        public string NomEquipeM { get; set; }
+        public string NomPaysM { get; set; }
+        public string NomContinentM { get; set; }
+        public string NomPrenomAgentM { get; set; }
+    }
+    #endregion
+    #region JoueurModels : liste des joueurs
+    public class JoueurModels
+    {
+        public List<JoueurModel> ListeJoueur { get; set; }
+        private RepoBol repo = new RepoBol();
+        public JoueurModels(int idContinent, int idPays, int idEquipe, int idPosition, int idJoueur)
+        {
+            ListeJoueur = new List<JoueurModel>();
+            var liste = repo.GetJoueur(idContinent, idPays, idEquipe, idPosition, idJoueur);
+            foreach (var c in liste)
+            {
+                ListeJoueur.Add(new JoueurModel
+                {
+                    IdM = c.IdDto,
+                    NomJoueurM = c.NomJoueurDto,
+                    PrenomM = c.PrenomDto,
+                    DateNaissanceM = c.DateNaissanceDto,
+                    DateDebutContratM = c.DateDebutContratDto,
+                    DateFinContratM = c.DateFinContratDto,
+                    SalaireHebdomadaireM = c.SalaireHebdomadaireDto,
+                    PositionM = c.PositionDto,
+                    NomEquipeM = c.NomEquipeDto,
+                    NomContinentM = c.NomContinentDto,
+                    NomPaysM = c.NomPaysDto,
+                    NomPrenomAgentM = c.NomPrenomAgentDto
+                });
+            }
+        }
+    }
+    #endregion
+}

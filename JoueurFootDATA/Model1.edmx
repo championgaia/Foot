@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EquipeDeFootModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="GetClub" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idContinent" Type="int" Mode="In" />
+          <Parameter Name="idPays" Type="int" Mode="In" />
+          <Parameter Name="idEquipe" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetContinent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idContinent" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetPays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idContinent" Type="int" Mode="In" />
+          <Parameter Name="idPays" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetPlayer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idContinent" Type="int" Mode="In" />
+          <Parameter Name="idPays" Type="int" Mode="In" />
+          <Parameter Name="idEquipe" Type="int" Mode="In" />
+          <Parameter Name="idPosition" Type="int" Mode="In" />
+          <Parameter Name="idJoueur" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetPosition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idPosition" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="EquipeDeFootModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EquipeDeFootModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="FootContexte" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="GetClub" ReturnType="Collection(EquipeDeFootModel.GetClub_Result)">
+            <Parameter Name="idContinent" Mode="In" Type="Int32" />
+            <Parameter Name="idPays" Mode="In" Type="Int32" />
+            <Parameter Name="idEquipe" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetContinent" ReturnType="Collection(EquipeDeFootModel.GetContinent_Result)">
+          <Parameter Name="idContinent" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetPays" ReturnType="Collection(EquipeDeFootModel.GetPays_Result)">
+            <Parameter Name="idContinent" Mode="In" Type="Int32" />
+            <Parameter Name="idPays" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetPlayer" ReturnType="Collection(EquipeDeFootModel.GetPlayer_Result2)">
+            <Parameter Name="idContinent" Mode="In" Type="Int32" />
+            <Parameter Name="idPays" Mode="In" Type="Int32" />
+            <Parameter Name="idEquipe" Mode="In" Type="Int32" />
+            <Parameter Name="idPosition" Mode="In" Type="Int32" />
+            <Parameter Name="idJoueur" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetPosition" ReturnType="Collection(EquipeDeFootModel.GetPosition_Result)">
+            <Parameter Name="idPosition" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="GetClub_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="NomEquipe" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="SurNom" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Abreviation" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateFondation" Nullable="false" />
+          <Property Type="String" Name="PDG" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Entraineur" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="NomStade" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="NombreCoupeNation" Nullable="false" />
+          <Property Type="Int32" Name="NombreCoupeContinental" Nullable="false" />
+          <Property Type="String" Name="NomPays" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NomContinent" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetContinent_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Nom" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetPays_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="NomPays" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetPlayer_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="NomJoueur" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PrenomJoueur" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="DateNaissance" Nullable="false" />
+          <Property Type="DateTime" Name="DateDebutContrat" Nullable="false" />
+          <Property Type="DateTime" Name="DateFinContrat" Nullable="false" />
+          <Property Type="Int32" Name="SalaireHebdomadaire" Nullable="false" />
+          <Property Type="String" Name="NomEquipe" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PositionNom" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NomPays" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NomContinent" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NomAgent" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PrenomAgent" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetPlayer_Result1">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="NomJoueur" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PrenomJoueur" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="DateNaissance" Nullable="false" />
+          <Property Type="DateTime" Name="DateDebutContrat" Nullable="false" />
+          <Property Type="DateTime" Name="DateFinContrat" Nullable="false" />
+          <Property Type="Int32" Name="SalaireHebdomadaire" Nullable="false" />
+          <Property Type="String" Name="NomEquipe" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PositionNom" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NomPays" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NomContinent" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NomAgent" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PrenomAgent" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetPlayer_Result2">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="NomJoueur" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PrenomJoueur" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="DateNaissance" Nullable="false" />
+          <Property Type="DateTime" Name="DateDebutContrat" Nullable="false" />
+          <Property Type="DateTime" Name="DateFinContrat" Nullable="false" />
+          <Property Type="Int32" Name="SalaireHebdomadaire" Nullable="false" />
+          <Property Type="String" Name="NomEquipe" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PositionNom" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NomPays" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NomContinent" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NomAgent" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PrenomAgent" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetPosition_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="PositionNom" Nullable="false" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EquipeDeFootModelStoreContainer" CdmEntityContainer="FootContexte" >
+          <FunctionImportMapping FunctionImportName="GetClub" FunctionName="EquipeDeFootModel.Store.GetClub">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetClub_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NomEquipe" ColumnName="NomEquipe" />
+                <ScalarProperty Name="SurNom" ColumnName="SurNom" />
+                <ScalarProperty Name="Abreviation" ColumnName="Abreviation" />
+                <ScalarProperty Name="DateFondation" ColumnName="DateFondation" />
+                <ScalarProperty Name="PDG" ColumnName="PDG" />
+                <ScalarProperty Name="Entraineur" ColumnName="Entraineur" />
+                <ScalarProperty Name="NomStade" ColumnName="NomStade" />
+                <ScalarProperty Name="NombreCoupeNation" ColumnName="NombreCoupeNation" />
+                <ScalarProperty Name="NombreCoupeContinental" ColumnName="NombreCoupeContinental" />
+                <ScalarProperty Name="NomPays" ColumnName="NomPays" />
+                <ScalarProperty Name="NomContinent" ColumnName="NomContinent" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetContinent" FunctionName="EquipeDeFootModel.Store.GetContinent">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetContinent_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetPays" FunctionName="EquipeDeFootModel.Store.GetPays">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetPays_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NomPays" ColumnName="NomPays" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetPlayer" FunctionName="EquipeDeFootModel.Store.GetPlayer">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetPlayer_Result2">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NomJoueur" ColumnName="NomJoueur" />
+                <ScalarProperty Name="PrenomJoueur" ColumnName="PrenomJoueur" />
+                <ScalarProperty Name="DateNaissance" ColumnName="DateNaissance" />
+                <ScalarProperty Name="DateDebutContrat" ColumnName="DateDebutContrat" />
+                <ScalarProperty Name="DateFinContrat" ColumnName="DateFinContrat" />
+                <ScalarProperty Name="SalaireHebdomadaire" ColumnName="SalaireHebdomadaire" />
+                <ScalarProperty Name="NomEquipe" ColumnName="NomEquipe" />
+                <ScalarProperty Name="PositionNom" ColumnName="PositionNom" />
+                <ScalarProperty Name="NomPays" ColumnName="NomPays" />
+                <ScalarProperty Name="NomContinent" ColumnName="NomContinent" />
+                <ScalarProperty Name="NomAgent" ColumnName="NomAgent" />
+                <ScalarProperty Name="PrenomAgent" ColumnName="PrenomAgent" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetPosition" FunctionName="EquipeDeFootModel.Store.GetPosition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetPosition_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PositionNom" ColumnName="PositionNom" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

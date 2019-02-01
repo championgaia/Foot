@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoueurFootBOL", "JoueurFootBOL\JoueurFootBOL.csproj", "{5BDC93B6-9EEA-457D-BFCD-B586FDEAFC93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoueurFootDATA", "JoueurFootDATA\JoueurFootDATA.csproj", "{79F777C0-8B77-49CB-A223-B331A24C6574}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoueurFoot_API", "JoueurFoot_API\JoueurFoot_API.csproj", "{A2D83B9F-FB79-4444-8A4C-D38241618214}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO_UIL_BOL", "DTO_UIL_BOL\DTO_UIL_BOL.csproj", "{51976141-F6D0-4066-879F-D47C2B82B620}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO_BOL_DATA", "DTO_BOL_DATA\DTO_BOL_DATA.csproj", "{25763C44-75ED-4FC3-A15B-9853AE073616}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootbalManager_UIL", "FootbalManager_UIL\FootbalManager_UIL.csproj", "{65FEDAB3-D9AC-4240-9778-32458F8EFC91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BDC93B6-9EEA-457D-BFCD-B586FDEAFC93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BDC93B6-9EEA-457D-BFCD-B586FDEAFC93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BDC93B6-9EEA-457D-BFCD-B586FDEAFC93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BDC93B6-9EEA-457D-BFCD-B586FDEAFC93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79F777C0-8B77-49CB-A223-B331A24C6574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79F777C0-8B77-49CB-A223-B331A24C6574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79F777C0-8B77-49CB-A223-B331A24C6574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79F777C0-8B77-49CB-A223-B331A24C6574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2D83B9F-FB79-4444-8A4C-D38241618214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2D83B9F-FB79-4444-8A4C-D38241618214}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2D83B9F-FB79-4444-8A4C-D38241618214}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2D83B9F-FB79-4444-8A4C-D38241618214}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51976141-F6D0-4066-879F-D47C2B82B620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51976141-F6D0-4066-879F-D47C2B82B620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51976141-F6D0-4066-879F-D47C2B82B620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51976141-F6D0-4066-879F-D47C2B82B620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25763C44-75ED-4FC3-A15B-9853AE073616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25763C44-75ED-4FC3-A15B-9853AE073616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25763C44-75ED-4FC3-A15B-9853AE073616}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25763C44-75ED-4FC3-A15B-9853AE073616}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65FEDAB3-D9AC-4240-9778-32458F8EFC91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65FEDAB3-D9AC-4240-9778-32458F8EFC91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65FEDAB3-D9AC-4240-9778-32458F8EFC91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65FEDAB3-D9AC-4240-9778-32458F8EFC91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F726454E-FAD7-4CA9-8A5E-99A10EAB0B2B}
+	EndGlobalSection
+EndGlobal

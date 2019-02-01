@@ -1,0 +1,102 @@
+﻿@model FootbalManager_UIL.JoueurViewModel
+
+@{
+    ViewBag.Title = "DetailsJoueur";
+}
+
+<h2>DetailJoueur</h2>
+
+<div>
+    <h4>ListJoueurViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal"></dl>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Id")
+        </th>
+        <th>
+            @Html.DisplayName("NomJoueur")
+        </th>
+        <th>
+            @Html.DisplayName( "Prenom")
+        </th>
+        <th>
+            @Html.DisplayName("Naissance")
+        </th>
+        <th>
+            @Html.DisplayName("DebutContrat")
+        </th>
+        <th>
+            @Html.DisplayName("FinContrat")
+        </th>
+        <th>
+            @Html.DisplayName("Salaire")
+        </th>
+        <th>
+            @Html.DisplayName("Taille")
+        </th>
+        <th>
+            @Html.DisplayName("Poid")
+        </th>
+        <th>
+            @Html.DisplayName("Equipe")
+        </th>
+        <th>
+            @Html.DisplayName("Pays")
+        </th>
+        <th>
+            @Html.DisplayName("Agent")
+        </th>
+        <th></th>
+    </tr>
+
+    
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Joueur.IdM)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Joueur.NomJoueurM)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Joueur.PrenomM)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Joueur.DateNaissanceM)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Joueur.DateDebutContratM)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Joueur.DateFinContratM)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Joueur.SalaireHebdomadaireM)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Joueur.TailleM)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Joueur.PoidM)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Joueur.NomEquipeM)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Joueur.NomPaysM)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Joueur.NomPrenomAgentM)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditJoueur", new {idJoueur = Model.Joueur.IdM }) |
+                @Html.ActionLink("Back to List", "Index")
+            </td>
+        </tr>
+    
+
+</table>
+
