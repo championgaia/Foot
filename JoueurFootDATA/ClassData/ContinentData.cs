@@ -15,6 +15,10 @@ namespace JoueurFootDATA
     {
         public List<ContinentData> ListeContinent { get; set; }
         private FootContexte context = new FootContexte();
+        #region Constucteur par déffaut
+        private ContinentDatas() { }
+        #endregion
+        #region Constucteur avec idContinent
         public ContinentDatas(int idContinent)
         {
             ListeContinent = new List<ContinentData>();
@@ -24,6 +28,7 @@ namespace JoueurFootDATA
                 ListeContinent.Add(new ContinentData { Id = c.Id, NomContinent = c.Nom });
             }
         }
+        #endregion
     }
     #endregion
 }
