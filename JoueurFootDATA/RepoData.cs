@@ -104,10 +104,15 @@ namespace JoueurFootDATA
 
         #endregion
         #region TestSingleton
-        public TestSingleton GetTestSingleton()
+        public TestSingletonDto GetTestSingleton()
         {
-            TestSingleton test = TestSingleton.Instance;
-            return test;
+            var test = TestSingleton.Instance;
+            var testDto = new TestSingletonDto
+            {
+                IdDto = test.Id,
+                NomDto = test.Nom
+            };
+            return testDto;
         }
         #endregion
     }

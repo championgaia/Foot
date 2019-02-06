@@ -63,4 +63,11 @@ namespace DTO_BOL_DATA
         public string NomPrenomAgentDto { get; set; }
     }
     #endregion
+    #region TestSingleton
+    public sealed class TestSingletonDto
+    {
+        public int IdDto { get; set; }
+        public string NomDto { get; set; }
+    }
+    #endregion
 }
