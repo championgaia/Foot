@@ -103,5 +103,12 @@ namespace JoueurFootDATA
         }
 
         #endregion
+        #region TestSingleton
+        public TestSingleton GetTestSingleton()
+        {
+            TestSingleton test = TestSingleton.Instance;
+            return test;
+        }
+        #endregion
     }
 }

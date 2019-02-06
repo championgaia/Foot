@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JoueurFootDATA
 {
-    internal sealed class TestSingleton
+    public sealed class TestSingleton
     {
         //private int Id { get; set; }
         //private string Nom { get; set; }
