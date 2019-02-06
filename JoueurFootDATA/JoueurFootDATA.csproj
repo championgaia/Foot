@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="ClassData\PositionData.cs" />
     <Compile Include="ClassData\TEST.cs" />
+    <Compile Include="ClassData\TestSingleton.cs" />
     <Compile Include="GetPlayer_Result1.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
