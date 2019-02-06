@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace JoueurFootDATA
 {
+    #region MyRegion
     internal class ContinentSingletonData
     {
         public int Id { get; set; }
@@ -27,5 +28,7 @@ namespace JoueurFootDATA
             }
         }
         #endregion
-    } 
+    }
+    #endregion
+
 }
