@@ -103,6 +103,8 @@ namespace JoueurFootDATA
         }
 
         #endregion
+
+        #region Singleton test RepoData
         #region TestSingleton
         public TestSingletonDto GetTestSingleton()
         {
@@ -114,6 +116,20 @@ namespace JoueurFootDATA
             };
             return testDto;
         }
+        #endregion
+        #region GetContinentSingletonDTOs
+        public List<ContinentDTO> GetContinentSingletonDTOs(int idContinent)
+        {
+            ContinentSingletonDatas continents = new ContinentSingletonDatas(idContinent);
+            var liste = continents.ListeContinent;
+            List<ContinentDTO> listeDto = new List<ContinentDTO>();
+            foreach (var c in liste)
+            {
+                listeDto.Add(new ContinentDTO { IdDto = c.Id, NomContinentDto = c.NomContinent });
+            }
+            return listeDto;
+        }
+        #endregion
         #endregion
     }
 }

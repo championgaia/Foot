@@ -13,6 +13,7 @@ namespace JoueurFootDATA.ClassData
         public string NomContinent { get; set; }
     }
     #endregion
+    //version 2 add singleton sur la classe contient liste => pas intéret
     #region ContinentDataSingletons : liste des continents
     internal class ContinentDataSingletons : List<ContinentDataSingleton>
     {
