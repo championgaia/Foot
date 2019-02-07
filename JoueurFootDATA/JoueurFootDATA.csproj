@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassData\ContinentDataSingleton.cs" />
     <Compile Include="ClassData\ContinentSingletonData.cs" />
     <Compile Include="ClassData\PositionData.cs" />
     <Compile Include="ClassData\TEST.cs" />

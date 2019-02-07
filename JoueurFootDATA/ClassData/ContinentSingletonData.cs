@@ -30,12 +30,12 @@ namespace JoueurFootDATA
         #endregion
     }
     #endregion
-    #region ContinentDatas : liste des continents
+    #region ContinentSingletonDatas : liste des continents
     internal class ContinentSingletonDatas
     {
         public List<ContinentSingletonData> ListeContinent { get; set; }
         FootContexte context = new FootContexte();
-        #region Constucteur par déffaut
+        #region Constructeur par déffaut
         ContinentSingletonDatas() { }
         #endregion
         #region Constucteur avec idContinent
