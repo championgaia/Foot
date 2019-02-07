@@ -16,6 +16,8 @@ namespace ClassBOL
         public int SalaireHebdomadaire { get; set; }
         public int? Taille { get; set; }
         public int? Poid { get; set; }
+        public int PrixMin { get; set; }
+        public int? PrixMax { get; set; }
         public string Position { get; set; }
         public string NomEquipe { get; set; }
         public string NomPays { get; set; }
@@ -43,6 +45,7 @@ namespace ClassBOL
                     DateDebutContrat = c.DateDebutContratDto,
                     DateFinContrat = c.DateFinContratDto,
                     SalaireHebdomadaire = c.SalaireHebdomadaireDto,
+                    PrixMin = c.SalaireHebdomadaireDto* (int)(DateTime.Now-c.DateFinContratDto).TotalDays/7,
                     Position = c.PositionDto,
                     NomEquipe = c.NomEquipeDto,
                     NomContinent = c.NomContinentDto,

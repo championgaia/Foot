@@ -50,6 +50,9 @@
             @Html.DisplayName("Salaire")
         </th>
         <th>
+            @Html.DisplayName("PrixMin")
+        </th>
+        <th>
             @Html.DisplayName("Position")
         </th>
         <th>
@@ -66,40 +69,43 @@
 
     @foreach (var item in Model.ListeJoueur)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomJoueurM)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PrenomM)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateNaissanceM)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateFinContratM)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SalaireHebdomadaireM)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PositionM)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomEquipeM)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomPaysM)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomPrenomAgentM)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "EditJoueur", new { idJoueur = item.IdM }) |
-                @Html.ActionLink("Details", "DetailsJoueur", new { idJoueur = item.IdM }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomJoueurM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrenomM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateNaissanceM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateFinContratM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalaireHebdomadaireM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrixMinM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PositionM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomEquipeM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomPaysM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomPrenomAgentM)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditJoueur", new { idJoueur = item.IdM }) |
+            @Html.ActionLink("Details", "DetailsJoueur", new { idJoueur = item.IdM }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
     }
 
 </table>

@@ -88,6 +88,7 @@ namespace JoueurFootBOL
                     DateDebutContratDto = c.DateDebutContrat,
                     DateFinContratDto = c.DateFinContrat,
                     SalaireHebdomadaireDto = c.SalaireHebdomadaire,
+                    PrixMinDto = c.PrixMin,
                     PositionDto = c.Position,
                     NomEquipeDto = c.NomEquipe,
                     NomContinentDto = c.NomContinent,

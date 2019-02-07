@@ -13,6 +13,7 @@ namespace JoueurFootDATA
         public DateTime DateDebutContrat{ get; set; }
         public DateTime DateFinContrat { get; set; }
         public int SalaireHebdomadaire{ get; set; }
+        public int? PrixMax { get; set; }
         public int? Taille { get; set; }
         public int? Poid { get; set; }
         public string Position { get; set; }

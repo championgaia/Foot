@@ -56,6 +56,8 @@ namespace DTO_UIL_BOL
         public int SalaireHebdomadaireDto { get; set; }
         public int? TailleDto { get; set; }
         public int? PoidDto { get; set; }
+        public int PrixMinDto { get; set; }
+        public int? PrixMaxDto { get; set; }
         public string PositionDto { get; set; }
         public string NomEquipeDto { get; set; }
         public string NomPaysDto { get; set; }
