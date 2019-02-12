@@ -45,7 +45,7 @@ namespace ClassBOL
                     DateDebutContrat = c.DateDebutContratDto,
                     DateFinContrat = c.DateFinContratDto,
                     SalaireHebdomadaire = c.SalaireHebdomadaireDto,
-                    PrixMin = c.SalaireHebdomadaireDto* (int)(DateTime.Now-c.DateFinContratDto).TotalDays/7,
+                    PrixMin = (int)((double)c.SalaireHebdomadaireDto/7*(c.DateFinContratDto-DateTime.Now).TotalDays),
                     Position = c.PositionDto,
                     NomEquipe = c.NomEquipeDto,
                     NomContinent = c.NomContinentDto,
