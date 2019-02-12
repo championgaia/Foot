@@ -1,0 +1,3 @@
+﻿faire une interface contient les methodes pour implanter partout (meme method pour faire une action pour tous les couches)
+utiliser git par cmd
+add offre pour faire une offre d'achat

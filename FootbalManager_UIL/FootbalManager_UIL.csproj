@@ -184,6 +184,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\OffreModel.cs" />
     <Compile Include="Models\PositionModel.cs" />
     <Compile Include="Models\ContinentModel.cs" />
     <Compile Include="Models\EquipeModel.cs" />
@@ -200,8 +201,10 @@
     <Compile Include="Views\Joueur\ListClassViewModel.cs" />
     <Compile Include="Views\Joueur\ListObjetViewModel.cs" />
     <Compile Include="Views\Joueur\ListIdViewModel.cs" />
+    <Compile Include="Views\Joueur\OffreViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="A faire\a faire.txt" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

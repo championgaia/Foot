@@ -1,5 +1,6 @@
 ﻿using ClassBOL;
 using DTO_UIL_BOL;
+using System;
 using System.Collections.Generic;
 
 namespace JoueurFootBOL
@@ -97,6 +98,12 @@ namespace JoueurFootBOL
                 });
             }
             return ListeJoueurDTO;
+        }
+        #endregion
+        #region faire une offre Repo Bol
+        public bool CreateOffreRepoBol(OffreDTO offreDto)
+        {
+            return new OffreBOL().CreateOffreBol(new OffreBOL {IdJoueur = offreDto.IdJoueurDto, PrixOffre = offreDto.PrixOffreDto });
         }
         #endregion
     }

@@ -65,14 +65,11 @@ namespace DTO_UIL_BOL
         public string NomPrenomAgentDto { get; set; }
     }
     #endregion
-    #region new class
-    public class NewClass
+    #region new class OffreDTO
+    public class OffreDTO
     {
-        public int Id { get; set; }
-        public void HelloWorld()
-        {
-            Console.Write("Hello World");
-        }
+        public int IdJoueurDto { get; set; }
+        public int PrixOffreDto { get; set; }
     }
     #endregion
 }

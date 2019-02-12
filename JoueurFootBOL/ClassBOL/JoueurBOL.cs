@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ClassBOL
+namespace JoueurFootBOL
 {
     #region JoueurBOL
     internal class JoueurBOL
@@ -30,6 +30,7 @@ namespace ClassBOL
     {
         public List<JoueurBOL> ListeJoueur { get; set; }
         private RepoData repo = new RepoData();
+        #region constructoeur de la classe JoueurBOLs
         public JoueurBOLs(int idContinent, int idPays, int idEquipe, int idPosition, int idJoueur)
         {
             ListeJoueur = new List<JoueurBOL>();
@@ -45,7 +46,7 @@ namespace ClassBOL
                     DateDebutContrat = c.DateDebutContratDto,
                     DateFinContrat = c.DateFinContratDto,
                     SalaireHebdomadaire = c.SalaireHebdomadaireDto,
-                    PrixMin = (int)((double)c.SalaireHebdomadaireDto/7*(c.DateFinContratDto-DateTime.Now).TotalDays),
+                    PrixMin = (int)((double)c.SalaireHebdomadaireDto / 7 * (c.DateFinContratDto - DateTime.Now).TotalDays),
                     Position = c.PositionDto,
                     NomEquipe = c.NomEquipeDto,
                     NomContinent = c.NomContinentDto,
@@ -54,6 +55,7 @@ namespace ClassBOL
                 });
             }
         }
+        #endregion
     }
     #endregion
 }
