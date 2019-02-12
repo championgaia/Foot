@@ -54,7 +54,7 @@ namespace DTO_BOL_DATA
         public DateTime DateDebutContratDto { get; set; }
         public DateTime DateFinContratDto { get; set; }
         public int SalaireHebdomadaireDto { get; set; }
-        public int? PrixMaxDto { get; set; }
+        public double? PrixMaxDto { get; set; }
         public int? TailleDto { get; set; }
         public int? PoidDto { get; set; }
         public string PositionDto { get; set; }

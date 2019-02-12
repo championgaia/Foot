@@ -10,7 +10,7 @@ namespace FootbalManager_UIL.Models
     public class OffreModel
     {
         public int IdJoueurM { get; set; }
-        public int PrixOffreM { get; set; }
+        public double PrixOffreM { get; set; }
         RepoBol repo = new RepoBol();
         #region Faire une offre
         public bool CreateOffreModel(OffreModel offreM)

@@ -16,8 +16,8 @@ namespace JoueurFootBOL
         public int SalaireHebdomadaire { get; set; }
         public int? Taille { get; set; }
         public int? Poid { get; set; }
-        public int PrixMin { get; set; }
-        public int? PrixMax { get; set; }
+        public double PrixMin { get; set; }
+        public double? PrixMax { get; set; }
         public string Position { get; set; }
         public string NomEquipe { get; set; }
         public string NomPays { get; set; }
@@ -46,7 +46,7 @@ namespace JoueurFootBOL
                     DateDebutContrat = c.DateDebutContratDto,
                     DateFinContrat = c.DateFinContratDto,
                     SalaireHebdomadaire = c.SalaireHebdomadaireDto,
-                    PrixMin = (int)((double)c.SalaireHebdomadaireDto / 7 * (c.DateFinContratDto - DateTime.Now).TotalDays),
+                    PrixMin = (double)c.SalaireHebdomadaireDto / 7 * (c.DateFinContratDto - DateTime.Now).TotalDays,
                     Position = c.PositionDto,
                     NomEquipe = c.NomEquipeDto,
                     NomContinent = c.NomContinentDto,

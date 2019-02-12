@@ -20,8 +20,8 @@ namespace JoueurFoot_UIL.Models
         [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")]
         public DateTime DateFinContratM { get; set; }
         public int SalaireHebdomadaireM { get; set; }
-        public int PrixMinM { get; set; }
-        public int? PrixMaxM { get; set; }
+        public double PrixMinM { get; set; }
+        public double? PrixMaxM { get; set; }
         public int? TailleM { get; set; }
         public int? PoidM { get; set; }
         public string PositionM { get; set; }

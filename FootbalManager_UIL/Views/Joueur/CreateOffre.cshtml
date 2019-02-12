@@ -6,11 +6,8 @@
 }
 
 <h2>CreateOffre</h2>
-<h3 class="message btn">
-    @Model.Message
-</h3>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "myForm" }))
 {
     @Html.AntiForgeryToken()
 

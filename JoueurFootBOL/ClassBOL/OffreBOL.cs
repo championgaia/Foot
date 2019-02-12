@@ -7,7 +7,7 @@ namespace JoueurFootBOL
     internal class OffreBOL
     {
         public int IdJoueur { get; set; }
-        public int PrixOffre { get; set; }
+        public double PrixOffre { get; set; }
         Random Rnd = new Random();
         #region faire une offre Bol
         public bool CreateOffreBol(OffreBOL offre)
@@ -18,7 +18,7 @@ namespace JoueurFootBOL
             else if ((offre.PrixOffre > joueur.PrixMax) && (joueur.PrixMax != null))
                 return true;
             else
-                return true;
+                return Rnd.Next(1,4)>=2;
         }
         #endregion
     }

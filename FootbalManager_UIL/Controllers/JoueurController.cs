@@ -62,6 +62,7 @@ namespace FootbalManager_UIL.Controllers
         {
             var tranferVM = new TranferViewModel {
                                                 FkJoueurVM = idJoueur,
+                                                NomEquipeDepartVM = new JoueurViewModel(-1, -1, -1, -1, idJoueur).Joueur.NomEquipeM,
                                                 PrixTransferVM = prixTransfer,
                                                 PrixSupVM = prixTransfer*2/10 };
             return View(tranferVM);

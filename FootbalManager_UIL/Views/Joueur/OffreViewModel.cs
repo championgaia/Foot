@@ -9,7 +9,7 @@ namespace FootbalManager_UIL
     public class OffreViewModel
     {
         public int IdJoueurVM { get; set; }
-        public int PrixOffreVM { get; set; }
+        public double PrixOffreVM { get; set; }
         public string Message { get; set; } = "OK";
         #region Faire une offre
         public bool CreateOffreViewModel(OffreViewModel offreVM)
