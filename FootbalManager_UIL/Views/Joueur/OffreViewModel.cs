@@ -10,10 +10,12 @@ namespace FootbalManager_UIL
     {
         public int IdJoueurVM { get; set; }
         public int PrixOffreVM { get; set; }
+        public string Message { get; set; } = "OK";
         #region Faire une offre
         public bool CreateOffreViewModel(OffreViewModel offreVM)
         {
-            return new OffreModel().CreateOffreModel(new OffreModel { IdJoueurM = offreVM.IdJoueurVM, PrixOffreM = offreVM.PrixOffreVM });
+            var offreModel = new OffreModel();
+            return offreModel.CreateOffreModel(new OffreModel { IdJoueurM = offreVM.IdJoueurVM, PrixOffreM = offreVM.PrixOffreVM });
         }
         #endregion
     }

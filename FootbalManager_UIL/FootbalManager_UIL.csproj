@@ -202,6 +202,7 @@
     <Compile Include="Views\Joueur\ListObjetViewModel.cs" />
     <Compile Include="Views\Joueur\ListIdViewModel.cs" />
     <Compile Include="Views\Joueur\OffreViewModel.cs" />
+    <Compile Include="Views\Joueur\TranferViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="A faire\a faire.txt" />
@@ -314,6 +315,7 @@
     <Content Include="Views\Foot\Index.cshtml" />
     <Content Include="Views\Foot\GetId.cshtml" />
     <Content Include="Views\Joueur\CreateOffre.cshtml" />
+    <Content Include="Views\Joueur\CreateTransfer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

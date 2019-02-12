@@ -103,7 +103,8 @@ namespace JoueurFootBOL
         #region faire une offre Repo Bol
         public bool CreateOffreRepoBol(OffreDTO offreDto)
         {
-            return new OffreBOL().CreateOffreBol(new OffreBOL {IdJoueur = offreDto.IdJoueurDto, PrixOffre = offreDto.PrixOffreDto });
+            OffreBOL offreBOL = new OffreBOL();
+            return offreBOL.CreateOffreBol(new OffreBOL {IdJoueur = offreDto.IdJoueurDto, PrixOffre = offreDto.PrixOffreDto });
         }
         #endregion
     }
