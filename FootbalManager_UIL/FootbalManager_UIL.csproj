@@ -313,6 +313,7 @@
     <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Foot\Index.cshtml" />
     <Content Include="Views\Foot\GetId.cshtml" />
+    <Content Include="Views\Joueur\CreateOffre.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

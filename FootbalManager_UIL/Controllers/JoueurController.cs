@@ -40,7 +40,22 @@ namespace FootbalManager_UIL.Controllers
             JoueurViewModel joueur = new JoueurViewModel(-1, -1, -1, -1, idJoueur);
             return View(joueur);
         }
-        
+        // Create: Offre
+        [HttpGet]
+        public ActionResult CreateOffre(int idJoueur)
+        {
+            OffreViewModel offreVM = new OffreViewModel { IdJoueurVM = idJoueur};
+            return View(offreVM);
+        }
+        // Create: Offre
+        [HttpPost]
+        public ActionResult CreateOffre(OffreViewModel offreVM)
+        {
+            if (!offreVM.CreateOffreViewModel(offreVM))
+                return RedirectToAction("CreateOffre", new { idJoueur = offreVM.IdJoueurVM });
+            else
+                return RedirectToAction("Index");
+        }
 
     }
 }

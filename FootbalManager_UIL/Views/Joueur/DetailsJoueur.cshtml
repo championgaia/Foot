@@ -92,7 +92,8 @@
                 @Html.DisplayFor(model => model.Joueur.NomPrenomAgentM)
             </td>
             <td>
-                @Html.ActionLink("Edit", "EditJoueur", new {idJoueur = Model.Joueur.IdM }) |
+                @Html.ActionLink("Edit", "EditJoueur", new { idJoueur = Model.Joueur.IdM }) |
+                @Html.ActionLink("Make an offer", "CreateOffre", new { idJoueur = Model.Joueur.IdM }) |
                 @Html.ActionLink("Back to List", "Index")
             </td>
         </tr>
