@@ -15,10 +15,10 @@ namespace JoueurFootDATA
     {
         public List<PositionData> ListePosition { get; set; }
         private FootContexte context = new FootContexte();
-        public PositionDatas(int idPosition)
+        public PositionDatas(int idJoueur)
         {
             ListePosition = new List<PositionData>();
-            var liste = context.GetPosition(idPosition);
+            var liste = context.GetPosition(idJoueur);
             foreach (var c in liste)
             {
                 ListePosition.Add(new PositionData { Id = c.Id, PositionNom = c.PositionNom });

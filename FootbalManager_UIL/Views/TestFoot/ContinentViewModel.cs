@@ -9,7 +9,7 @@ namespace FootbalManager_UIL
     public class ContinentViewModel
     {
         public ContinentModel ContinentVM { get; set; }
-        #region MyRegion
+        #region constructor par déffaut
         public ContinentViewModel() {}
         #endregion
         #region Constructor avec idContinent

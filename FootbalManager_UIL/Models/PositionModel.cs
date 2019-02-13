@@ -18,13 +18,13 @@ namespace JoueurFoot_UIL.Models
     {
         public List<PositionModel> ListePosition { get; set; }
         private RepoBol repo = new RepoBol();
-        public PositionModels(int idPosition)
+        public PositionModels(int idJoueur)
         {
             ListePosition = new List<PositionModel>();
-            var liste = repo.GetContinentDTOs(idPosition);
+            var liste = repo.GetPositionDTOs(idJoueur);
             foreach (var c in liste)
             {
-                ListePosition.Add(new PositionModel { IdM = c.IdDto, NomPositionM = c.NomContinentDto });
+                ListePosition.Add(new PositionModel { IdM = c.IdDto, NomPositionM = c.NomPositionDTO });
             }
         }
     }

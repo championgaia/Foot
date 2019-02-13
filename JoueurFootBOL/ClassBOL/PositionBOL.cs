@@ -20,10 +20,10 @@ namespace ClassBOL
     {
         public List<PositionBOL> ListePosition { get; set; }
         private RepoData repo = new RepoData();
-        public PositionBOLs(int idPosition)
+        public PositionBOLs(int idJoueur)
         {
             ListePosition = new List<PositionBOL>();
-            var liste = repo.GetPositionDTOs(idPosition);
+            var liste = repo.GetPositionDTOs(idJoueur);
             foreach (var c in liste)
             {
                 ListePosition.Add(new PositionBOL { Id = c.IdDto, NomPosition = c.NomPositionDTO });

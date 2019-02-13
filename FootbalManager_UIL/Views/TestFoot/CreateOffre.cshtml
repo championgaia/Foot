@@ -1,4 +1,4 @@
-﻿@model FootbalManager_UIL.OffreViewModel
+﻿@model FootbalManager_UIL.MakeOffreViewModel
 
 @{
     ViewBag.Title = "CreateOffre";
@@ -15,31 +15,61 @@
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
-        @Html.LabelFor(model => model.ContinentVM.IdM, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.ContinentVM.IdM, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ContinentVM.IdM, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.FkContinentVM, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FkContinentVM, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(model => model.PaysVM.IdM, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.PaysVM.IdM, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.PaysVM.IdM, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.FkPaysVM, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FkPaysVM, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(model => model.EquipeVM.IdM, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.EquipeVM.IdM, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.EquipeVM.IdM, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.FkEquipeVM, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FkEquipeVM, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(model => model.JoueurVM.IdM, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.Label("Nom d'équipe", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.JoueurVM.IdM, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.JoueurVM.IdM, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.NomEquipeVM, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NomEquipeVM, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.HiddenFor(model => model.FkPositionVM, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FkPositionVM, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Position sur terrain", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NomPositionVM, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NomPositionVM, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.HiddenFor(model => model.IdJoueurVM, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.IdJoueurVM, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Nom de joueur", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NomJoueurVM, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NomJoueurVM, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("Prénom de joueur", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PreNomJoueurVM, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PreNomJoueurVM, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
@@ -52,7 +82,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
             @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -65,5 +95,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "DetailsJoueur", new { idContinent = Model.ContinentVM.IdM, idPays = Model.PaysVM.IdM, idEquipe = Model.EquipeVM.IdM, idJoueur = Model.JoueurVM.IdM })
+    @Html.ActionLink("Back to List", "DetailsJoueur", new { idContinent = Model.FkContinentVM, idPays = Model.FkPaysVM, idEquipe = Model.FkEquipeVM, idJoueur = Model.IdJoueurVM })
 </div>

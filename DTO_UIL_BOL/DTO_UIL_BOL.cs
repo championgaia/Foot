@@ -71,6 +71,7 @@ namespace DTO_UIL_BOL
         public int FkContinentDto { get; set; }
         public int FkPaysDto { get; set; }
         public int FkEquipeDto { get; set; }
+        public int FkPositionDto { get; set; }
         public int IdJoueurDto { get; set; }
         public double PrixOffreDto { get; set; }
     }

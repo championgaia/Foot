@@ -1,4 +1,5 @@
 ﻿using DTO_UIL_BOL;
+using JoueurFoot_UIL.Models;
 using JoueurFootBOL;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace FootbalManager_UIL.Models
                 FkContinentDto = offreM.FkContinentM,
                 FkPaysDto = offreM.FkPaysM,
                 FkEquipeDto = offreM.FkEquipeM,
+                FkPositionDto = new PositionModels(offreM.IdJoueurM).ListePosition.FirstOrDefault().IdM,
                 IdJoueurDto = offreM.IdJoueurM,
                 PrixOffreDto = offreM.PrixOffreM });
         }

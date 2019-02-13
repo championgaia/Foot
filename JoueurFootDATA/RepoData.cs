@@ -36,9 +36,9 @@ namespace JoueurFootDATA
         }
         #endregion
         #region GetPositionDTOs
-        public List<PositionDTO> GetPositionDTOs(int idPosition)
+        public List<PositionDTO> GetPositionDTOs(int idJoueur)
         {
-            PositionDatas positions = new PositionDatas(idPosition);
+            PositionDatas positions = new PositionDatas(idJoueur);
             var liste = positions.ListePosition;
             List<PositionDTO> listeDto = new List<PositionDTO>();
             foreach (var c in liste)

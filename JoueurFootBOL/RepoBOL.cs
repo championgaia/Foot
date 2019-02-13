@@ -34,9 +34,9 @@ namespace JoueurFootBOL
         }
         #endregion
         #region GetPositionDTOs Repo BOL
-        public List<PositionDTO> GetPositionDTOs(int idPosition)
+        public List<PositionDTO> GetPositionDTOs(int idJoueur)
         {
-            PositionBOLs positions = new PositionBOLs(idPosition);
+            PositionBOLs positions = new PositionBOLs(idJoueur);
             var liste = positions.ListePosition;
             List<PositionDTO> listeDto = new List<PositionDTO>();
             foreach (var c in liste)
@@ -104,7 +104,13 @@ namespace JoueurFootBOL
         public bool CreateOffreRepoBol(OffreDTO offreDto)
         {
             OffreBOL offreBOL = new OffreBOL();
-            return offreBOL.CreateOffreBol(new OffreBOL {IdJoueur = offreDto.IdJoueurDto, PrixOffre = offreDto.PrixOffreDto });
+            return offreBOL.CreateOffreBol(new OffreBOL {
+                FkContinent = offreDto.FkContinentDto,
+                FkPays = offreDto.FkPaysDto,
+                FkEquipe = offreDto.FkEquipeDto,
+                FkPosition = offreDto.FkPositionDto,
+                IdJoueur = offreDto.IdJoueurDto,
+                PrixOffre = offreDto.PrixOffreDto });
         }
         #endregion
     }

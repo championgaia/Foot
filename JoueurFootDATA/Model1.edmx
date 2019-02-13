@@ -25,7 +25,7 @@
           <Parameter Name="idJoueur" Type="int" Mode="In" />
         </Function>
         <Function Name="GetPosition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="idPosition" Type="int" Mode="In" />
+          <Parameter Name="idJoueur" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="EquipeDeFootModelStoreContainer" />
       </Schema></edmx:StorageModels>
@@ -35,9 +35,6 @@
         <EntityContainer Name="FootContexte" annotation:LazyLoadingEnabled="true" >
           <FunctionImport Name="GetContinent" ReturnType="Collection(EquipeDeFootModel.GetContinent_Result)">
           <Parameter Name="idContinent" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="GetPosition" ReturnType="Collection(EquipeDeFootModel.GetPosition_Result)">
-          <Parameter Name="idPosition" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetPlayer" ReturnType="Collection(EquipeDeFootModel.GetPlayer_Result3)">
             <Parameter Name="idContinent" Mode="In" Type="Int32" />
@@ -54,6 +51,9 @@
           <FunctionImport Name="GetPays" ReturnType="Collection(EquipeDeFootModel.GetPays_Result1)">
             <Parameter Name="idContinent" Mode="In" Type="Int32" />
             <Parameter Name="idPays" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetPosition" ReturnType="Collection(EquipeDeFootModel.GetPosition_Result1)">
+            <Parameter Name="idJoueur" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="GetClub_Result">
@@ -160,6 +160,10 @@
           <Property Type="Int32" Name="Id" Nullable="false" />
           <Property Type="String" Name="NomPays" Nullable="false" MaxLength="50" />
         </ComplexType>
+        <ComplexType Name="GetPosition_Result1">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="PositionNom" Nullable="false" MaxLength="50" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -171,14 +175,6 @@
               <ComplexTypeMapping TypeName="EquipeDeFootModel.GetContinent_Result">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nom" ColumnName="Nom" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetPosition" FunctionName="EquipeDeFootModel.Store.GetPosition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetPosition_Result">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="PositionNom" ColumnName="PositionNom" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -224,6 +220,14 @@
               <ComplexTypeMapping TypeName="EquipeDeFootModel.GetPays_Result1">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="NomPays" ColumnName="NomPays" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetPosition" FunctionName="EquipeDeFootModel.Store.GetPosition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetPosition_Result1">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PositionNom" ColumnName="PositionNom" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
