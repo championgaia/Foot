@@ -34,15 +34,15 @@ namespace JoueurFoot_UIL.Models
     #region JoueurModels : liste des joueurs
     public class JoueurModels
     {
-        public List<JoueurModel> ListeJoueur { get; set; }
+        public List<JoueurModel> ListeJoueurM { get; set; }
         private RepoBol repo = new RepoBol();
         public JoueurModels(int idContinent, int idPays, int idEquipe, int idPosition, int idJoueur)
         {
-            ListeJoueur = new List<JoueurModel>();
+            ListeJoueurM = new List<JoueurModel>();
             var liste = repo.GetJoueur(idContinent, idPays, idEquipe, idPosition, idJoueur);
             foreach (var c in liste)
             {
-                ListeJoueur.Add(new JoueurModel
+                ListeJoueurM.Add(new JoueurModel
                 {
                     IdM = c.IdDto,
                     NomJoueurM = c.NomJoueurDto,

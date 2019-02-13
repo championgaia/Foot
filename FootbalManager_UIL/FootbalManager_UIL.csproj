@@ -180,6 +180,7 @@
     <Compile Include="Controllers\JoueurController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\TestFootController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -195,6 +196,8 @@
     <Compile Include="Models\Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Views\TestFoot\ContinentPaysEquipeViewModel.cs" />
+    <Compile Include="Views\TestFoot\ContinentPaysViewModel.cs" />
     <Compile Include="Views\Joueur\JoueurViewModel.cs" />
     <Compile Include="Views\Joueur\ListeJoueurViewModel.cs" />
     <Compile Include="Views\Joueur\ListLabelleViewModel.cs" />
@@ -203,6 +206,7 @@
     <Compile Include="Views\Joueur\ListIdViewModel.cs" />
     <Compile Include="Views\Joueur\OffreViewModel.cs" />
     <Compile Include="Views\Joueur\TranferViewModel.cs" />
+    <Compile Include="Views\TestFoot\CPEJoueurViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="A faire\a faire.txt" />
@@ -316,6 +320,10 @@
     <Content Include="Views\Foot\GetId.cshtml" />
     <Content Include="Views\Joueur\CreateOffre.cshtml" />
     <Content Include="Views\Joueur\CreateTransfer.cshtml" />
+    <Content Include="Views\TestFoot\Index.cshtml" />
+    <Content Include="Views\TestFoot\GetPays.cshtml" />
+    <Content Include="Views\TestFoot\GetEquipe.cshtml" />
+    <Content Include="Views\TestFoot\GetJoueur.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

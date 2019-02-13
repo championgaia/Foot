@@ -9,17 +9,16 @@ namespace FootbalManager_UIL
         public List<JoueurModel> ListeJoueur { get; set; }
         public List<ContinentModel> ListeContinent { get; set; }
         public List<PaysModel> ListePays { get; set; }
-        public ListJoueurViewModel()
-        {
-
-        }
+        #region constructor par déffaut
+        public ListJoueurViewModel() { }
+        #endregion
         #region constructor de class
         public ListJoueurViewModel(int idContinent, int idPays, int idEquipe, int idPosition, int idJoueur)
         {
             #region ListeJoueur
             ListeJoueur = new List<JoueurModel>();
             JoueurModels joueurs = new JoueurModels(idContinent, idPays, idEquipe, idPosition, idJoueur);
-            foreach (var item in joueurs.ListeJoueur)
+            foreach (var item in joueurs.ListeJoueurM)
             {
                 ListeJoueur.Add(item);
             }

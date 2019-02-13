@@ -1,0 +1,67 @@
+﻿@model FootbalManager_UIL.CPEJoueurViewModel
+
+@{
+    ViewBag.Title = "GetJoueur";
+}
+
+<h2>GetJoueur</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("NomJoueur")
+        </th>
+        <th>
+            @Html.DisplayName("Prenom")
+        </th>
+        <th>
+            @Html.DisplayName("DateNaissance")
+        </th>
+        <th>
+            @Html.DisplayName("SalaireHebdomadaire")
+        </th>
+        <th>
+            @Html.DisplayName("Position")
+        </th>
+        <th>
+            @Html.DisplayName("NomEquipe")
+        </th>
+        <th>
+            @Html.DisplayName("NomPrenomAgent")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.ListeJoueurVM)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomJoueurM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrenomM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateNaissanceM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalaireHebdomadaireM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PositionM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomEquipeM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomPrenomAgentM)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

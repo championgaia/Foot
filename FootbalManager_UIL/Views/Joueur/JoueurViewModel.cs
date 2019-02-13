@@ -9,14 +9,15 @@ namespace FootbalManager_UIL
     public class JoueurViewModel
     {
         public JoueurModel Joueur { get; set; }
-        public JoueurViewModel()
-        {
-
-        }
+        #region Constructor par deffaut
+        public JoueurViewModel() { }
+        #endregion
+        #region Constructor
         public JoueurViewModel(int idContinent, int idPays, int idEquipe, int idPosition, int idJoueur)
         {
             JoueurModels joueurs = new JoueurModels(idContinent, idPays, idEquipe, idPosition, idJoueur);
-            Joueur = joueurs.ListeJoueur.FirstOrDefault();
+            Joueur = joueurs.ListeJoueurM.FirstOrDefault();
         }
+        #endregion
     }
 }

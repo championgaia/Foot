@@ -1,0 +1,40 @@
+﻿@model FootbalManager_UIL.ContinentPaysViewModel
+
+@{
+    ViewBag.Title = "GetPays";
+}
+
+<h2>GetPays</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("IdPays")
+        </th>
+        <th>
+            @Html.DisplayName("NomPays")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.ListePaysVM)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomPaysM)
+            </td>
+            <td>
+                @Html.ActionLink("Choisir", "GetEquipe", new { idContinent = Model.FkContinent, idPays = item.IdM }) |
+                @Html.ActionLink("Back", "Index", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>
+
