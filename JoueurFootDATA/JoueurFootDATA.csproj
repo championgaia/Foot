@@ -55,6 +55,12 @@
     <Compile Include="ClassData\PositionData.cs" />
     <Compile Include="ClassData\TEST.cs" />
     <Compile Include="ClassData\TestSingleton.cs" />
+    <Compile Include="GetClub_Result1.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetPays_Result1.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="GetPlayer_Result1.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

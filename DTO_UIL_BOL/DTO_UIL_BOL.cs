@@ -68,6 +68,9 @@ namespace DTO_UIL_BOL
     #region new class OffreDTO
     public class OffreDTO
     {
+        public int FkContinentDto { get; set; }
+        public int FkPaysDto { get; set; }
+        public int FkEquipeDto { get; set; }
         public int IdJoueurDto { get; set; }
         public double PrixOffreDto { get; set; }
     }

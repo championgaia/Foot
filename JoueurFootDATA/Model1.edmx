@@ -33,17 +33,8 @@
     <edmx:ConceptualModels>
       <Schema Namespace="EquipeDeFootModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="FootContexte" annotation:LazyLoadingEnabled="true" >
-          <FunctionImport Name="GetClub" ReturnType="Collection(EquipeDeFootModel.GetClub_Result)">
-            <Parameter Name="idContinent" Mode="In" Type="Int32" />
-            <Parameter Name="idPays" Mode="In" Type="Int32" />
-            <Parameter Name="idEquipe" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="GetContinent" ReturnType="Collection(EquipeDeFootModel.GetContinent_Result)">
           <Parameter Name="idContinent" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="GetPays" ReturnType="Collection(EquipeDeFootModel.GetPays_Result)">
-            <Parameter Name="idContinent" Mode="In" Type="Int32" />
-            <Parameter Name="idPays" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetPosition" ReturnType="Collection(EquipeDeFootModel.GetPosition_Result)">
           <Parameter Name="idPosition" Mode="In" Type="Int32" />
@@ -54,6 +45,15 @@
             <Parameter Name="idEquipe" Mode="In" Type="Int32" />
             <Parameter Name="idPosition" Mode="In" Type="Int32" />
             <Parameter Name="idJoueur" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetClub" ReturnType="Collection(EquipeDeFootModel.GetClub_Result1)">
+            <Parameter Name="idContinent" Mode="In" Type="Int32" />
+            <Parameter Name="idPays" Mode="In" Type="Int32" />
+            <Parameter Name="idEquipe" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetPays" ReturnType="Collection(EquipeDeFootModel.GetPays_Result1)">
+            <Parameter Name="idContinent" Mode="In" Type="Int32" />
+            <Parameter Name="idPays" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="GetClub_Result">
@@ -142,43 +142,35 @@
           <Property Type="String" Name="NomAgent" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="PrenomAgent" Nullable="false" MaxLength="50" />
         </ComplexType>
+        <ComplexType Name="GetClub_Result1">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="NomEquipe" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="SurNom" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Abreviation" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateFondation" Nullable="false" />
+          <Property Type="String" Name="PDG" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Entraineur" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="NomStade" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="NombreCoupeNation" Nullable="false" />
+          <Property Type="Int32" Name="NombreCoupeContinental" Nullable="false" />
+          <Property Type="String" Name="NomPays" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NomContinent" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetPays_Result1">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="NomPays" Nullable="false" MaxLength="50" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="EquipeDeFootModelStoreContainer" CdmEntityContainer="FootContexte" >
-          <FunctionImportMapping FunctionImportName="GetClub" FunctionName="EquipeDeFootModel.Store.GetClub">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetClub_Result">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="NomEquipe" ColumnName="NomEquipe" />
-                <ScalarProperty Name="SurNom" ColumnName="SurNom" />
-                <ScalarProperty Name="Abreviation" ColumnName="Abreviation" />
-                <ScalarProperty Name="DateFondation" ColumnName="DateFondation" />
-                <ScalarProperty Name="PDG" ColumnName="PDG" />
-                <ScalarProperty Name="Entraineur" ColumnName="Entraineur" />
-                <ScalarProperty Name="NomStade" ColumnName="NomStade" />
-                <ScalarProperty Name="NombreCoupeNation" ColumnName="NombreCoupeNation" />
-                <ScalarProperty Name="NombreCoupeContinental" ColumnName="NombreCoupeContinental" />
-                <ScalarProperty Name="NomPays" ColumnName="NomPays" />
-                <ScalarProperty Name="NomContinent" ColumnName="NomContinent" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetContinent" FunctionName="EquipeDeFootModel.Store.GetContinent">
             <ResultMapping>
               <ComplexTypeMapping TypeName="EquipeDeFootModel.GetContinent_Result">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nom" ColumnName="Nom" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetPays" FunctionName="EquipeDeFootModel.Store.GetPays">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetPays_Result">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="NomPays" ColumnName="NomPays" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -206,6 +198,32 @@
                 <ScalarProperty Name="NomContinent" ColumnName="NomContinent" />
                 <ScalarProperty Name="NomAgent" ColumnName="NomAgent" />
                 <ScalarProperty Name="PrenomAgent" ColumnName="PrenomAgent" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetClub" FunctionName="EquipeDeFootModel.Store.GetClub">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetClub_Result1">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NomEquipe" ColumnName="NomEquipe" />
+                <ScalarProperty Name="SurNom" ColumnName="SurNom" />
+                <ScalarProperty Name="Abreviation" ColumnName="Abreviation" />
+                <ScalarProperty Name="DateFondation" ColumnName="DateFondation" />
+                <ScalarProperty Name="PDG" ColumnName="PDG" />
+                <ScalarProperty Name="Entraineur" ColumnName="Entraineur" />
+                <ScalarProperty Name="NomStade" ColumnName="NomStade" />
+                <ScalarProperty Name="NombreCoupeNation" ColumnName="NombreCoupeNation" />
+                <ScalarProperty Name="NombreCoupeContinental" ColumnName="NombreCoupeContinental" />
+                <ScalarProperty Name="NomPays" ColumnName="NomPays" />
+                <ScalarProperty Name="NomContinent" ColumnName="NomContinent" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetPays" FunctionName="EquipeDeFootModel.Store.GetPays">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetPays_Result1">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NomPays" ColumnName="NomPays" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

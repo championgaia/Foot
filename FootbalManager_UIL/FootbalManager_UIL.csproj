@@ -204,8 +204,9 @@
     <Compile Include="Views\Joueur\ListClassViewModel.cs" />
     <Compile Include="Views\Joueur\ListObjetViewModel.cs" />
     <Compile Include="Views\Joueur\ListIdViewModel.cs" />
-    <Compile Include="Views\Joueur\OffreViewModel.cs" />
-    <Compile Include="Views\Joueur\TranferViewModel.cs" />
+    <Compile Include="Views\TestFoot\ContinentViewModel.cs" />
+    <Compile Include="Views\TestFoot\OffreViewModel.cs" />
+    <Compile Include="Views\TestFoot\TranferViewModel.cs" />
     <Compile Include="Views\TestFoot\CPEJoueurViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -324,6 +325,10 @@
     <Content Include="Views\TestFoot\GetPays.cshtml" />
     <Content Include="Views\TestFoot\GetEquipe.cshtml" />
     <Content Include="Views\TestFoot\GetJoueur.cshtml" />
+    <Content Include="Views\TestFoot\EditJoueur.cshtml" />
+    <Content Include="Views\TestFoot\DetailsJoueur.cshtml" />
+    <Content Include="Views\TestFoot\CreateOffre.cshtml" />
+    <Content Include="Views\TestFoot\CreateTransfer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

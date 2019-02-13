@@ -57,11 +57,14 @@
                 @Html.DisplayFor(modelItem => item.NomPrenomAgentM)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "EditJoueur", new { idContinent = Model.FkContinent, idPays = Model.FkPays, idEquipe = Model.FkEquipe, idJoueur = item.IdM }) |
+                @Html.ActionLink("Details", "DetailsJoueur", new { idContinent = Model.FkContinent, idPays = Model.FkPays, idEquipe = Model.FkEquipe, idJoueur = item.IdM })
+                
             </td>
         </tr>
     }
 
 </table>
+<div>
+    @Html.ActionLink("Back", "GetEquipe", new { idContinent = Model.FkContinent, idPays = Model.FkPays, idEquipe = Model.FkEquipe })
+</div>

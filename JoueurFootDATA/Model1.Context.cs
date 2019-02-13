@@ -28,23 +28,6 @@ namespace JoueurFootDATA
         }
     
     
-        public virtual ObjectResult<GetClub_Result> GetClub(Nullable<int> idContinent, Nullable<int> idPays, Nullable<int> idEquipe)
-        {
-            var idContinentParameter = idContinent.HasValue ?
-                new ObjectParameter("idContinent", idContinent) :
-                new ObjectParameter("idContinent", typeof(int));
-    
-            var idPaysParameter = idPays.HasValue ?
-                new ObjectParameter("idPays", idPays) :
-                new ObjectParameter("idPays", typeof(int));
-    
-            var idEquipeParameter = idEquipe.HasValue ?
-                new ObjectParameter("idEquipe", idEquipe) :
-                new ObjectParameter("idEquipe", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetClub_Result>("GetClub", idContinentParameter, idPaysParameter, idEquipeParameter);
-        }
-    
         public virtual ObjectResult<GetContinent_Result> GetContinent(Nullable<int> idContinent)
         {
             var idContinentParameter = idContinent.HasValue ?
@@ -52,19 +35,6 @@ namespace JoueurFootDATA
                 new ObjectParameter("idContinent", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetContinent_Result>("GetContinent", idContinentParameter);
-        }
-    
-        public virtual ObjectResult<GetPays_Result> GetPays(Nullable<int> idContinent, Nullable<int> idPays)
-        {
-            var idContinentParameter = idContinent.HasValue ?
-                new ObjectParameter("idContinent", idContinent) :
-                new ObjectParameter("idContinent", typeof(int));
-    
-            var idPaysParameter = idPays.HasValue ?
-                new ObjectParameter("idPays", idPays) :
-                new ObjectParameter("idPays", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetPays_Result>("GetPays", idContinentParameter, idPaysParameter);
         }
     
         public virtual ObjectResult<GetPosition_Result> GetPosition(Nullable<int> idPosition)
@@ -99,6 +69,36 @@ namespace JoueurFootDATA
                 new ObjectParameter("idJoueur", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetPlayer_Result3>("GetPlayer", idContinentParameter, idPaysParameter, idEquipeParameter, idPositionParameter, idJoueurParameter);
+        }
+    
+        public virtual ObjectResult<GetClub_Result1> GetClub(Nullable<int> idContinent, Nullable<int> idPays, Nullable<int> idEquipe)
+        {
+            var idContinentParameter = idContinent.HasValue ?
+                new ObjectParameter("idContinent", idContinent) :
+                new ObjectParameter("idContinent", typeof(int));
+    
+            var idPaysParameter = idPays.HasValue ?
+                new ObjectParameter("idPays", idPays) :
+                new ObjectParameter("idPays", typeof(int));
+    
+            var idEquipeParameter = idEquipe.HasValue ?
+                new ObjectParameter("idEquipe", idEquipe) :
+                new ObjectParameter("idEquipe", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetClub_Result1>("GetClub", idContinentParameter, idPaysParameter, idEquipeParameter);
+        }
+    
+        public virtual ObjectResult<GetPays_Result1> GetPays(Nullable<int> idContinent, Nullable<int> idPays)
+        {
+            var idContinentParameter = idContinent.HasValue ?
+                new ObjectParameter("idContinent", idContinent) :
+                new ObjectParameter("idContinent", typeof(int));
+    
+            var idPaysParameter = idPays.HasValue ?
+                new ObjectParameter("idPays", idPays) :
+                new ObjectParameter("idPays", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetPays_Result1>("GetPays", idContinentParameter, idPaysParameter);
         }
     }
 }
