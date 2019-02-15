@@ -11,6 +11,7 @@ namespace JoueurFoot_UIL.Models
     {
         public int IdM { get; set; }
         public string NomPaysM { get; set; }
+        public int FkContinentM { get; set; }
     }
     #endregion
     #region PaysModels : liste des Pays
@@ -24,7 +25,7 @@ namespace JoueurFoot_UIL.Models
             var liste = repo.GetPaysDTOs(idContinent, idPays);
             foreach (var c in liste)
             {
-                ListePays.Add(new PaysModel { IdM = c.IdDto, NomPaysM = c.NomPaysDto });
+                ListePays.Add(new PaysModel { IdM = c.IdDto, NomPaysM = c.NomPaysDto, FkContinentM = c.FkContinentDto });
             }
         }
     }

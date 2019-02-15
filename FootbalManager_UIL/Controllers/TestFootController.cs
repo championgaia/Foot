@@ -37,14 +37,16 @@ namespace FootbalManager_UIL.Controllers
         [HttpGet]
         public ActionResult EditJoueur(int idContinent, int idPays, int idEquipe, int idJoueur)
         {
-            var joueur = new JoueurViewModel(idContinent, idPays, idEquipe, -1, idJoueur);
+            var position = new PositionModels(idJoueur).ListePosition.FirstOrDefault();
+            var joueur = new JoueurViewModel(idContinent, idPays, idEquipe, position.IdM, idJoueur);
             return View(joueur);
         }
         // Detail: Joueur
         [HttpGet]
         public ActionResult DetailsJoueur(int idContinent, int idPays, int idEquipe, int idJoueur)
         {
-            var joueur = new JoueurViewModel(idContinent, idPays, idEquipe, -1, idJoueur);
+            var position = new PositionModels(idJoueur).ListePosition.FirstOrDefault();
+            var joueur = new JoueurViewModel(idContinent, idPays, idEquipe, position.IdM, idJoueur);
             return View(joueur);
         }
         // Create: Offre

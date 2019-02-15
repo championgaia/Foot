@@ -8,6 +8,7 @@ namespace ClassBOL
     {
         public int Id { get; set; }
         public string NomPays { get; set; }
+        public int FkContinent { get; set; }
     }
     #endregion
     #region PaysBOLs : liste des Pays
@@ -21,7 +22,7 @@ namespace ClassBOL
             var liste = repo.GetPaysDTOs(idContinent, idPays);
             foreach (var c in liste)
             {
-                ListePays.Add(new PaysBOL { Id = c.IdDto, NomPays = c.NomPaysDto });
+                ListePays.Add(new PaysBOL { Id = c.IdDto, NomPays = c.NomPaysDto, FkContinent = c.FkContinentDto });
             }
         }
     }

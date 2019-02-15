@@ -17,6 +17,8 @@ namespace JoueurFootDATA
         public int NbrCoupeContinental { get; set; }
         public string NomPays { get; set; }
         public string NomContinent { get; set; }
+        public int FkContinent { get; set; }
+        public int FkPays { get; set; }
     }
     #endregion
     #region EquipeDatas : liste des équipes
@@ -42,7 +44,10 @@ namespace JoueurFootDATA
                     NbrCoupeNation = c.NombreCoupeNation,
                     NbrCoupeContinental = c.NombreCoupeContinental,
                     NomContinent = c.NomContinent,
-                    NomPays = c.NomPays });
+                    NomPays = c.NomPays,
+                    FkContinent = c.FkContinent,
+                    FkPays = c.FkPays
+                });
             }
         }
     }

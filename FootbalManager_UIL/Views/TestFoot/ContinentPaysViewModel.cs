@@ -24,7 +24,7 @@ namespace FootbalManager_UIL
         public ContinentPaysViewModel(int idContinent, int idPays)
         {
             FkContinent = idContinent;
-            ListePaysVM = new PaysModels(idContinent, 0).ListePays;
+            ListePaysVM = new PaysModels(idContinent, idPays).ListePays;
         }
         #endregion
     }

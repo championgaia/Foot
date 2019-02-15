@@ -19,6 +19,8 @@ namespace ClassBOL
         public int NbrCoupeContinental { get; set; }
         public string NomPays { get; set; }
         public string NomContinent { get; set; }
+        public int FkContinent { get; set; }
+        public int FkPays { get; set; }
     }
     #endregion
     #region EquipeBOLs : liste des équipes BOL
@@ -45,7 +47,9 @@ namespace ClassBOL
                     NbrCoupeNation = c.NbrCoupeNationDto,
                     NbrCoupeContinental = c.NbrCoupeContinentalDto,
                     NomContinent = c.NomContinentDto,
-                    NomPays = c.NomPaysDto
+                    NomPays = c.NomPaysDto,
+                    FkContinent = c.FkContinentDto,
+                    FkPays = c.FkPaysDto
                 });
             }
         }

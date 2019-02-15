@@ -8,6 +8,7 @@ namespace JoueurFootDATA
     {
         public int Id { get; set; }
         public string NomPays { get; set; }
+        public int FkContinent { get; set; }
     }
     #endregion
     #region PaysDatas : liste des pays
@@ -21,7 +22,7 @@ namespace JoueurFootDATA
             var liste = context.GetPays(idContinent, idPays);
             foreach (var c in liste)
             {
-                ListePays.Add(new PaysData { Id = c.Id, NomPays = c.NomPays });
+                ListePays.Add(new PaysData { Id = c.Id, NomPays = c.NomPays, FkContinent = c.FkContinent });
             }
         }
     }

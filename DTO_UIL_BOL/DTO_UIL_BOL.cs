@@ -18,6 +18,7 @@ namespace DTO_UIL_BOL
     {
         public int IdDto { get; set; }
         public string NomPaysDto { get; set; }
+        public int FkContinentDto { get; set; }
     }
     #endregion
     #region PositionDTO
@@ -42,6 +43,8 @@ namespace DTO_UIL_BOL
         public int NbrCoupeContinentalDto { get; set; }
         public string NomPaysDto { get; set; }
         public string NomContinentDto { get; set; }
+        public int FkContinentDto { get; set; }
+        public int FkPaysDto { get; set; }
     }
     #endregion
     #region JoueurDTO
@@ -63,6 +66,9 @@ namespace DTO_UIL_BOL
         public string NomPaysDto { get; set; }
         public string NomContinentDto { get; set; }
         public string NomPrenomAgentDto { get; set; }
+        public int FkContinentDto { get; set; }
+        public int FkPaysDto { get; set; }
+        public int FkEquipeDto { get; set; }
     }
     #endregion
     #region new class OffreDTO

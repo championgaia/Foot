@@ -23,6 +23,9 @@ namespace JoueurFootBOL
         public string NomPays { get; set; }
         public string NomContinent { get; set; }
         public string NomPrenomAgent { get; set; }
+        public int FkContinent { get; set; }
+        public int FkPays { get; set; }
+        public int FkEquipe { get; set; }
     }
     #endregion
     #region JoueurBOL : liste des joueurs
@@ -51,7 +54,10 @@ namespace JoueurFootBOL
                     NomEquipe = c.NomEquipeDto,
                     NomContinent = c.NomContinentDto,
                     NomPays = c.NomPaysDto,
-                    NomPrenomAgent = c.NomPrenomAgentDto
+                    NomPrenomAgent = c.NomPrenomAgentDto,
+                    FkContinent = c.FkContinentDto,
+                    FkPays = c.FkPaysDto,
+                    FkEquipe = c.FkEquipeDto
                 });
             }
         }

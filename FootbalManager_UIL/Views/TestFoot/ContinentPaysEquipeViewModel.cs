@@ -27,7 +27,7 @@ namespace FootbalManager_UIL
         {
             FkContinent = idContinent;
             FkPays = idPays;
-            ListeEquipeVM = new EquipeModels(idContinent, idPays, 0).ListeEquipe;
+            ListeEquipeVM = new EquipeModels(idContinent, idPays, idEquipe).ListeEquipe;
         }
         #endregion
     }

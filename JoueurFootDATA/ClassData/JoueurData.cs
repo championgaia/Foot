@@ -21,7 +21,9 @@ namespace JoueurFootDATA
         public string NomPays { get; set; }
         public string NomContinent { get; set; }
         public string NomPrenomAgent { get; set; }
-        
+        public int FkContinent { get; set; }
+        public int FkPays { get; set; }
+        public int FkEquipe { get; set; }
     }
     #endregion
     #region JoueurDatas : liste des joueurs
@@ -48,7 +50,10 @@ namespace JoueurFootDATA
                     NomEquipe = c.NomEquipe,
                     NomContinent = c.NomContinent,
                     NomPays = c.NomPays,
-                    NomPrenomAgent = c.NomAgent + " " + c.PrenomAgent
+                    NomPrenomAgent = c.NomAgent + " " + c.PrenomAgent,
+                    FkContinent = c.FkContinent,
+                    FkPays = c.FkPays,
+                    FkEquipe = c.FkEquipe
                 });
             }
         }

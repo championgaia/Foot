@@ -21,6 +21,8 @@ namespace JoueurFoot_UIL.Models
         public int NbrCoupeContinentalM { get; set; }
         public string NomPaysM { get; set; }
         public string NomContinentM { get; set; }
+        public int FkContinentM { get; set; }
+        public int FkPaysM { get; set; }
     }
     #endregion
     #region EquipeModels : liste des équipes BOL
@@ -47,7 +49,9 @@ namespace JoueurFoot_UIL.Models
                     NbrCoupeNationM = c.NbrCoupeNationDto,
                     NbrCoupeContinentalM = c.NbrCoupeContinentalDto,
                     NomContinentM = c.NomContinentDto,
-                    NomPaysM = c.NomPaysDto
+                    NomPaysM = c.NomPaysDto,
+                    FkContinentM = c.FkContinentDto,
+                    FkPaysM = c.FkPaysDto
                 });
             }
         }

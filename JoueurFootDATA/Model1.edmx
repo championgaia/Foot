@@ -36,23 +36,23 @@
           <FunctionImport Name="GetContinent" ReturnType="Collection(EquipeDeFootModel.GetContinent_Result)">
           <Parameter Name="idContinent" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="GetPlayer" ReturnType="Collection(EquipeDeFootModel.GetPlayer_Result3)">
+          <FunctionImport Name="GetPosition" ReturnType="Collection(EquipeDeFootModel.GetPosition_Result1)">
+          <Parameter Name="idJoueur" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetClub" ReturnType="Collection(EquipeDeFootModel.GetClub_Result2)">
+            <Parameter Name="idContinent" Mode="In" Type="Int32" />
+            <Parameter Name="idPays" Mode="In" Type="Int32" />
+            <Parameter Name="idEquipe" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetPays" ReturnType="Collection(EquipeDeFootModel.GetPays_Result2)">
+            <Parameter Name="idContinent" Mode="In" Type="Int32" />
+            <Parameter Name="idPays" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetPlayer" ReturnType="Collection(EquipeDeFootModel.GetPlayer_Result4)">
             <Parameter Name="idContinent" Mode="In" Type="Int32" />
             <Parameter Name="idPays" Mode="In" Type="Int32" />
             <Parameter Name="idEquipe" Mode="In" Type="Int32" />
             <Parameter Name="idPosition" Mode="In" Type="Int32" />
-            <Parameter Name="idJoueur" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="GetClub" ReturnType="Collection(EquipeDeFootModel.GetClub_Result1)">
-            <Parameter Name="idContinent" Mode="In" Type="Int32" />
-            <Parameter Name="idPays" Mode="In" Type="Int32" />
-            <Parameter Name="idEquipe" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="GetPays" ReturnType="Collection(EquipeDeFootModel.GetPays_Result1)">
-            <Parameter Name="idContinent" Mode="In" Type="Int32" />
-            <Parameter Name="idPays" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="GetPosition" ReturnType="Collection(EquipeDeFootModel.GetPosition_Result1)">
             <Parameter Name="idJoueur" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
@@ -164,6 +164,46 @@
           <Property Type="Int32" Name="Id" Nullable="false" />
           <Property Type="String" Name="PositionNom" Nullable="false" MaxLength="50" />
         </ComplexType>
+        <ComplexType Name="GetClub_Result2">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="NomEquipe" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="SurNom" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Abreviation" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateFondation" Nullable="false" />
+          <Property Type="String" Name="PDG" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Entraineur" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="NomStade" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="NombreCoupeNation" Nullable="false" />
+          <Property Type="Int32" Name="NombreCoupeContinental" Nullable="false" />
+          <Property Type="Int32" Name="FkPays" Nullable="false" />
+          <Property Type="String" Name="NomPays" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="FkContinent" Nullable="false" />
+          <Property Type="String" Name="NomContinent" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="GetPays_Result2">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="NomPays" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="FkContinent" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GetPlayer_Result4">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="NomJoueur" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PrenomJoueur" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="DateNaissance" Nullable="false" />
+          <Property Type="DateTime" Name="DateDebutContrat" Nullable="false" />
+          <Property Type="DateTime" Name="DateFinContrat" Nullable="false" />
+          <Property Type="Int32" Name="SalaireHebdomadaire" Nullable="false" />
+          <Property Type="String" Name="NomEquipe" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="FkEquipe" Nullable="false" />
+          <Property Type="String" Name="PositionNom" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="FkPosition" Nullable="false" />
+          <Property Type="String" Name="NomPays" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="FkPays" Nullable="false" />
+          <Property Type="String" Name="NomContinent" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="FkContinent" Nullable="false" />
+          <Property Type="String" Name="NomAgent" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PrenomAgent" Nullable="false" MaxLength="50" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -178,28 +218,17 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetPlayer" FunctionName="EquipeDeFootModel.Store.GetPlayer">
+          <FunctionImportMapping FunctionImportName="GetPosition" FunctionName="EquipeDeFootModel.Store.GetPosition">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetPlayer_Result3">
+              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetPosition_Result1">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="NomJoueur" ColumnName="NomJoueur" />
-                <ScalarProperty Name="PrenomJoueur" ColumnName="PrenomJoueur" />
-                <ScalarProperty Name="DateNaissance" ColumnName="DateNaissance" />
-                <ScalarProperty Name="DateDebutContrat" ColumnName="DateDebutContrat" />
-                <ScalarProperty Name="DateFinContrat" ColumnName="DateFinContrat" />
-                <ScalarProperty Name="SalaireHebdomadaire" ColumnName="SalaireHebdomadaire" />
-                <ScalarProperty Name="NomEquipe" ColumnName="NomEquipe" />
                 <ScalarProperty Name="PositionNom" ColumnName="PositionNom" />
-                <ScalarProperty Name="NomPays" ColumnName="NomPays" />
-                <ScalarProperty Name="NomContinent" ColumnName="NomContinent" />
-                <ScalarProperty Name="NomAgent" ColumnName="NomAgent" />
-                <ScalarProperty Name="PrenomAgent" ColumnName="PrenomAgent" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetClub" FunctionName="EquipeDeFootModel.Store.GetClub">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetClub_Result1">
+              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetClub_Result2">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="NomEquipe" ColumnName="NomEquipe" />
                 <ScalarProperty Name="SurNom" ColumnName="SurNom" />
@@ -210,24 +239,42 @@
                 <ScalarProperty Name="NomStade" ColumnName="NomStade" />
                 <ScalarProperty Name="NombreCoupeNation" ColumnName="NombreCoupeNation" />
                 <ScalarProperty Name="NombreCoupeContinental" ColumnName="NombreCoupeContinental" />
+                <ScalarProperty Name="FkPays" ColumnName="FkPays" />
                 <ScalarProperty Name="NomPays" ColumnName="NomPays" />
+                <ScalarProperty Name="FkContinent" ColumnName="FkContinent" />
                 <ScalarProperty Name="NomContinent" ColumnName="NomContinent" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetPays" FunctionName="EquipeDeFootModel.Store.GetPays">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetPays_Result1">
+              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetPays_Result2">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="NomPays" ColumnName="NomPays" />
+                <ScalarProperty Name="FkContinent" ColumnName="FkContinent" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GetPosition" FunctionName="EquipeDeFootModel.Store.GetPosition">
+          <FunctionImportMapping FunctionImportName="GetPlayer" FunctionName="EquipeDeFootModel.Store.GetPlayer">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetPosition_Result1">
+              <ComplexTypeMapping TypeName="EquipeDeFootModel.GetPlayer_Result4">
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NomJoueur" ColumnName="NomJoueur" />
+                <ScalarProperty Name="PrenomJoueur" ColumnName="PrenomJoueur" />
+                <ScalarProperty Name="DateNaissance" ColumnName="DateNaissance" />
+                <ScalarProperty Name="DateDebutContrat" ColumnName="DateDebutContrat" />
+                <ScalarProperty Name="DateFinContrat" ColumnName="DateFinContrat" />
+                <ScalarProperty Name="SalaireHebdomadaire" ColumnName="SalaireHebdomadaire" />
+                <ScalarProperty Name="NomEquipe" ColumnName="NomEquipe" />
+                <ScalarProperty Name="FkEquipe" ColumnName="FkEquipe" />
                 <ScalarProperty Name="PositionNom" ColumnName="PositionNom" />
+                <ScalarProperty Name="FkPosition" ColumnName="FkPosition" />
+                <ScalarProperty Name="NomPays" ColumnName="NomPays" />
+                <ScalarProperty Name="FkPays" ColumnName="FkPays" />
+                <ScalarProperty Name="NomContinent" ColumnName="NomContinent" />
+                <ScalarProperty Name="FkContinent" ColumnName="FkContinent" />
+                <ScalarProperty Name="NomAgent" ColumnName="NomAgent" />
+                <ScalarProperty Name="PrenomAgent" ColumnName="PrenomAgent" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

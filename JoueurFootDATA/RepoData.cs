@@ -30,7 +30,7 @@ namespace JoueurFootDATA
             List<PaysDTO> listeDto = new List<PaysDTO>();
             foreach (var c in liste)
             {
-                listeDto.Add(new PaysDTO { IdDto = c.Id, NomPaysDto = c.NomPays });
+                listeDto.Add(new PaysDTO { IdDto = c.Id, NomPaysDto = c.NomPays, FkContinentDto = c.FkContinent });
             }
             return listeDto;
         }
@@ -68,7 +68,9 @@ namespace JoueurFootDATA
                     NbrCoupeNationDto = c.NbrCoupeNation,
                     NbrCoupeContinentalDto = c.NbrCoupeContinental,
                     NomContinentDto = c.NomContinent,
-                    NomPaysDto = c.NomPays
+                    NomPaysDto = c.NomPays,
+                    FkContinentDto = c.FkContinent,
+                    FkPaysDto = c.FkPays
                 });
             }
             return listeDto;
@@ -96,7 +98,10 @@ namespace JoueurFootDATA
                     NomEquipeDto = c.NomEquipe,
                     NomContinentDto = c.NomContinent,
                     NomPaysDto = c.NomPays,
-                    NomPrenomAgentDto = c.NomPrenomAgent
+                    NomPrenomAgentDto = c.NomPrenomAgent,
+                    FkContinentDto = c.FkContinent,
+                    FkPaysDto = c.FkPays,
+                    FkEquipeDto = c.FkEquipe
                 });
             }
             return ListeJoueurDTO;
