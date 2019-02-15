@@ -49,36 +49,22 @@ namespace FootbalManager_UIL.Controllers
         }
         // Create: Offre
         [HttpGet]
-        public ActionResult CreateOffre(int idContinent, int idPays, int idEquipe, int idJoueur, int idPosition, string message)
+        public ActionResult CreateOffre(int idContinent, int idPays, int idEquipe, int idPosition, int idJoueur, string message)
         {
-            var joueur = new JoueurViewModel(idContinent, idPays, idEquipe, idPosition, idJoueur).Joueur;
-            var offreVM = new MakeOffreViewModel
-            {
-                FkContinentVM = idContinent,
-                FkPaysVM = idPays,
-                FkEquipeVM = idEquipe,
-                IdJoueurVM = idJoueur,
-                Message = message,
-                FkPositionVM = idPosition,
-                NomPositionVM = joueur.PositionM,
-                NomEquipeVM = joueur.NomEquipeM,
-                NomJoueurVM = joueur.NomJoueurM,
-                PreNomJoueurVM = joueur.PrenomM
-            };
+            var offreVM = new MakeOffreViewModel(idContinent,idPays, idEquipe, idPosition, idJoueur, 0, message);
             return View(offreVM);
         }
         // Create: Offre
         [HttpPost]
         public ActionResult CreateOffre(MakeOffreViewModel makeOffreVM)
         {
-            var idContinent = makeOffreVM.FkContinentVM;
-            var idPays = makeOffreVM.FkPaysVM;
-            var idEquipe = makeOffreVM.FkEquipeVM;
-            var idJoueur = makeOffreVM.IdJoueurVM;
-            var idPosition = makeOffreVM.FkPositionVM;
-            var prixOffre = makeOffreVM.PrixOffreVM;
-            var offreVM = new OffreViewModel(idContinent, idPays, idEquipe, idPosition, idJoueur, prixOffre);
-            if (offreVM.CreateOffreViewModel(offreVM))
+            var idContinent = makeOffreVM.OffreModelVM.FkContinentM;
+            var idPays = makeOffreVM.OffreModelVM.FkPaysM;
+            var idEquipe = makeOffreVM.OffreModelVM.FkEquipeM;
+            var idJoueur = makeOffreVM.OffreModelVM.IdJoueurM;
+            var idPosition = makeOffreVM.OffreModelVM.FkPositionM;
+            var prixOffre = makeOffreVM.OffreModelVM.PrixOffreM;
+            if (makeOffreVM.CreateOffreViewModel(makeOffreVM))
                 return RedirectToAction("CreateTransfer", new
                 {
                     idContinent,
@@ -94,6 +80,7 @@ namespace FootbalManager_UIL.Controllers
                     idPays,
                     idEquipe,
                     idJoueur,
+                    idPosition,
                     message = "He is not for sale"
                 });
             

@@ -16,18 +16,18 @@
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
-        @Html.LabelFor(model => model.IdJoueurVM, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.OffreModelVM.IdJoueurM, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.IdJoueurVM, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.IdJoueurVM, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.OffreModelVM.IdJoueurM, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.OffreModelVM.IdJoueurM, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.PrixOffreVM, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.OffreModelVM.PrixOffreM, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.PrixOffreVM, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.PrixOffreVM, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.OffreModelVM.PrixOffreM, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.OffreModelVM.PrixOffreM, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">

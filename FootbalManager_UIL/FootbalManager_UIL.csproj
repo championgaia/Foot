@@ -206,7 +206,6 @@
     <Compile Include="Views\Joueur\ListIdViewModel.cs" />
     <Compile Include="Views\TestFoot\ContinentViewModel.cs" />
     <Compile Include="Views\TestFoot\MakeOffreViewModel.cs" />
-    <Compile Include="Views\TestFoot\OffreViewModel.cs" />
     <Compile Include="Views\TestFoot\TranferViewModel.cs" />
     <Compile Include="Views\TestFoot\CPEJoueurViewModel.cs" />
   </ItemGroup>
@@ -328,7 +327,6 @@
     <Content Include="Views\TestFoot\GetJoueur.cshtml" />
     <Content Include="Views\TestFoot\EditJoueur.cshtml" />
     <Content Include="Views\TestFoot\DetailsJoueur.cshtml" />
-    <Content Include="Views\TestFoot\CreateOffreV1.cshtml" />
     <Content Include="Views\TestFoot\CreateTransfer.cshtml" />
     <Content Include="Views\TestFoot\CreateOffre.cshtml" />
   </ItemGroup>
