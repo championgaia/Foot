@@ -174,8 +174,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\EquipeController.cs" />
-    <Compile Include="Controllers\FootController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JoueurController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -310,18 +308,9 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Joueur\GetJoueurV1.cshtml" />
     <Content Include="Views\Joueur\Index.cshtml" />
-    <Content Include="Views\Joueur\DetailsJoueur.cshtml" />
-    <Content Include="Views\Joueur\EditJoueur.cshtml" />
-    <Content Include="Views\Joueur\GetJoueur.cshtml" />
-    <Content Include="Views\Joueur\Index - V1.cshtml" />
     <Content Include="Views\Joueur\GetId.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
-    <Content Include="Views\Foot\Index.cshtml" />
-    <Content Include="Views\Foot\GetId.cshtml" />
-    <Content Include="Views\Joueur\CreateOffre.cshtml" />
-    <Content Include="Views\Joueur\CreateTransfer.cshtml" />
     <Content Include="Views\TestFoot\Index.cshtml" />
     <Content Include="Views\TestFoot\GetPays.cshtml" />
     <Content Include="Views\TestFoot\GetEquipe.cshtml" />
@@ -335,7 +324,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Equipe\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -15,12 +15,14 @@ namespace FootbalManager_UIL.Controllers
         {
             return View();
         }
+        #region Pays
         // GET: Pays
         public ActionResult GetPays(int idContinent)
         {
             var continentPays = new ContinentPaysViewModel(idContinent);
             return View(continentPays);
         }
+        #endregion
         #region Equipe
         // GET: Equipe
         public ActionResult GetEquipe(int idContinent, int idPays)
