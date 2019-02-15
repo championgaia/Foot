@@ -15,13 +15,13 @@ namespace FootbalManager_UIL
         #region Get tous les equipes dans une pays
         public ContinentPaysEquipeViewModel(int idContinent, int idPays)
         {
-            ListeEquipeVM = new EquipeModels(idContinent, idPays, 0).ListeEquipe;
+            ListeEquipeVM = new EquipeModels(idContinent, idPays, 0).ListeEquipeM;
         }
         #endregion
         #region Get Une Equipe
         public ContinentPaysEquipeViewModel(int idContinent, int idPays, int idEquipe)
         {
-            ListeEquipeVM = new EquipeModels(idContinent, idPays, idEquipe).ListeEquipe;
+            ListeEquipeVM = new EquipeModels(idContinent, idPays, idEquipe).ListeEquipeM;
         }
         #endregion
     }

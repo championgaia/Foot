@@ -37,7 +37,7 @@ namespace FootbalManager_UIL
             NomContinent = continents.ListeContinent.FirstOrDefault().NomContinentM;
             NomPays = pays.ListePays.FirstOrDefault().NomPaysM;
             NomPosition = positions.ListePosition.FirstOrDefault().NomPositionM;
-            NomEquipe = equipes.ListeEquipe.FirstOrDefault().NomEquipeM;
+            NomEquipe = equipes.ListeEquipeM.FirstOrDefault().NomEquipeM;
             NomJoueur = joueurs.ListeJoueurM.FirstOrDefault().NomJoueurM;
         }
     }

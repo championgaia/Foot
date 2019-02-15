@@ -198,7 +198,8 @@
     <Compile Include="Startup.cs" />
     <Compile Include="Views\TestFoot\ContinentPaysEquipeViewModel.cs" />
     <Compile Include="Views\TestFoot\ContinentPaysViewModel.cs" />
-    <Compile Include="Views\Joueur\JoueurViewModel.cs" />
+    <Compile Include="Views\TestFoot\EquipeViewModel.cs" />
+    <Compile Include="Views\TestFoot\JoueurViewModel.cs" />
     <Compile Include="Views\Joueur\ListeJoueurViewModel.cs" />
     <Compile Include="Views\Joueur\ListLabelleViewModel.cs" />
     <Compile Include="Views\Joueur\ListClassViewModel.cs" />
@@ -329,6 +330,8 @@
     <Content Include="Views\TestFoot\DetailsJoueur.cshtml" />
     <Content Include="Views\TestFoot\CreateTransfer.cshtml" />
     <Content Include="Views\TestFoot\CreateOffre.cshtml" />
+    <Content Include="Views\TestFoot\EditEquipe.cshtml" />
+    <Content Include="Views\TestFoot\DetailsEquipe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

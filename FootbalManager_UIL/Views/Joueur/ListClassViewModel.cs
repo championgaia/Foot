@@ -27,7 +27,7 @@ namespace FootbalManager_UIL
             Continent = continents.ListeContinent.FirstOrDefault();
             Pays = pays.ListePays.FirstOrDefault();
             Position = positions.ListePosition.FirstOrDefault();
-            Equipe = equipes.ListeEquipe.FirstOrDefault();
+            Equipe = equipes.ListeEquipeM.FirstOrDefault();
             Joueur = joueurs.ListeJoueurM.FirstOrDefault();
         }
     }

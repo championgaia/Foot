@@ -28,15 +28,15 @@ namespace JoueurFoot_UIL.Models
     #region EquipeModels : liste des équipes BOL
     public class EquipeModels
     {
-        public List<EquipeModel> ListeEquipe { get; set; }
+        public List<EquipeModel> ListeEquipeM { get; set; }
         private RepoBol repo = new RepoBol();
         public EquipeModels(int idContinent, int idPays, int idEquipe)
         {
-            ListeEquipe = new List<EquipeModel>();
+            ListeEquipeM = new List<EquipeModel>();
             var liste = repo.GetEquipeDTOs(idContinent, idPays, idEquipe);
             foreach (var c in liste)
             {
-                ListeEquipe.Add(new EquipeModel
+                ListeEquipeM.Add(new EquipeModel
                 {
                     IdM = c.IdDto,
                     NomEquipeM = c.NomEquipeDto,

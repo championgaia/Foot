@@ -1,0 +1,133 @@
+﻿@model FootbalManager_UIL.EquipeViewModel
+
+@{
+    ViewBag.Title = "DetailsEquipe";
+}
+
+<h2>DetailsEquipe</h2>
+
+<div>
+    <h4>EquipeModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipeVM.IdM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipeVM.IdM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipeVM.NomEquipeM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipeVM.NomEquipeM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipeVM.SurNomM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipeVM.SurNomM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipeVM.AbreviationM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipeVM.AbreviationM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipeVM.DateFondationM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipeVM.DateFondationM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipeVM.PdgM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipeVM.PdgM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipeVM.EntraineurM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipeVM.EntraineurM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipeVM.NomStadeM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipeVM.NomStadeM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipeVM.NbrCoupeNationM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipeVM.NbrCoupeNationM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipeVM.NbrCoupeContinentalM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipeVM.NbrCoupeContinentalM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipeVM.NomPaysM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipeVM.NomPaysM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipeVM.NomContinentM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipeVM.NomContinentM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipeVM.FkContinentM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipeVM.FkContinentM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipeVM.FkPaysM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipeVM.FkPaysM)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {
+    idContinent = Model.EquipeVM.FkContinentM,
+    idPays = Model.EquipeVM.FkPaysM,
+    idEquipe = Model.EquipeVM.IdM }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

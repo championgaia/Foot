@@ -7,10 +7,7 @@
 <h2>GetEquipe</h2>
 
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayName("Id")
-        </th>                 
+    <tr>    
         <th>                  
             @Html.DisplayName("NomEquipe")
         </th>                 
@@ -19,30 +16,12 @@
         </th>                 
         <th>                  
             @Html.DisplayName("Abreviation")
-        </th>                 
-        <th>                  
-            @Html.DisplayName("DateFondation")
-        </th>                 
+        </th>   
         <th>                  
             @Html.DisplayName("Pdg")
         </th>                 
         <th>                  
             @Html.DisplayName("Entraineur")
-        </th>                 
-        <th>                  
-            @Html.DisplayName("NomStade")
-        </th>                 
-        <th>                  
-            @Html.DisplayName("NbrCoupeNation")
-        </th>                 
-        <th>                  
-            @Html.DisplayName("NbrCoupeContinental")
-        </th>                 
-        <th>                  
-            @Html.DisplayName("NomPays")
-        </th>                 
-        <th>                  
-            @Html.DisplayName("NomContinent")
         </th>
         <th></th>
     </tr>
@@ -50,9 +29,6 @@
     @foreach (var item in Model.ListeEquipeVM)
     {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdM)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NomEquipeM)
             </td>
@@ -63,32 +39,21 @@
                 @Html.DisplayFor(modelItem => item.AbreviationM)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DateFondationM)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.PdgM)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.EntraineurM)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.NomStadeM)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NbrCoupeNationM)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NbrCoupeContinentalM)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomPaysM)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomContinentM)
-            </td>
-            <td>
-                @Html.ActionLink("Choisir", "GetJoueur", new {idContinent = item.FkContinentM , idPays = item.FkPaysM, idEquipe = item.IdM }) 
-                
+                @Html.ActionLink("Choisir", "GetJoueur", new { idContinent = item.FkContinentM, idPays = item.FkPaysM, idEquipe = item.IdM }) |
+                @Html.ActionLink("Edit", "EditEquipe", new {
+               idContinent = item.FkContinentM,
+               idPays = item.FkPaysM,
+               idEquipe = item.IdM }) |
+                @Html.ActionLink("Details", "DetailsEquipe", new {
+               idContinent = item.FkContinentM,
+               idPays = item.FkPaysM,
+               idEquipe = item.IdM})
             </td>
         </tr>
     }

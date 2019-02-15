@@ -21,12 +21,29 @@ namespace FootbalManager_UIL.Controllers
             var continentPays = new ContinentPaysViewModel(idContinent);
             return View(continentPays);
         }
+        #region Equipe
         // GET: Equipe
         public ActionResult GetEquipe(int idContinent, int idPays)
         {
             var continentPaysEquipe = new ContinentPaysEquipeViewModel(idContinent, idPays);
             return View(continentPaysEquipe);
         }
+        // Edit: Equipe
+        [HttpGet]
+        public ActionResult EditEquipe(int idContinent, int idPays, int idEquipe)
+        {
+            var equipe = new EquipeViewModel(idContinent, idPays, idEquipe);
+            return View(equipe);
+        }
+        // Detail: Equipe
+        [HttpGet]
+        public ActionResult DetailsEquipe(int idContinent, int idPays, int idEquipe)
+        {
+            var equipe = new EquipeViewModel(idContinent, idPays, idEquipe);
+            return View(equipe);
+        }
+        #endregion
+        #region Joueurs
         // GET: Joueurs
         public ActionResult GetJoueur(int idContinent, int idPays, int idEquipe)
         {
@@ -47,11 +64,13 @@ namespace FootbalManager_UIL.Controllers
             var joueur = new JoueurViewModel(idContinent, idPays, idEquipe, idPosition, idJoueur);
             return View(joueur);
         }
+        #endregion
+        #region Offre
         // Create: Offre
         [HttpGet]
         public ActionResult CreateOffre(int idContinent, int idPays, int idEquipe, int idPosition, int idJoueur, string message)
         {
-            var offreVM = new MakeOffreViewModel(idContinent,idPays, idEquipe, idPosition, idJoueur, 0, message);
+            var offreVM = new MakeOffreViewModel(idContinent, idPays, idEquipe, idPosition, idJoueur, 0, message);
             return View(offreVM);
         }
         // Create: Offre
@@ -83,8 +102,10 @@ namespace FootbalManager_UIL.Controllers
                     idPosition,
                     message = "He is not for sale"
                 });
-            
+
         }
+        #endregion
+        #region Transfer
         // Create: Transfer
         [HttpGet]
         public ActionResult CreateTransfer(int idContinent, int idPays, int idEquipe, int idJoueur, int prixTransfer)
@@ -98,5 +119,6 @@ namespace FootbalManager_UIL.Controllers
             };
             return View(tranferVM);
         }
+        #endregion  
     }
 }
