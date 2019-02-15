@@ -13,6 +13,7 @@ namespace FootbalManager_UIL.Models
         public int FkContinentM { get; set; }
         public int FkPaysM { get; set; }
         public int FkEquipeM { get; set; }
+        public int FkPositionM { get; set; }
         public int IdJoueurM { get; set; }
         public double PrixOffreM { get; set; }
         RepoBol repo = new RepoBol();
@@ -23,7 +24,7 @@ namespace FootbalManager_UIL.Models
                 FkContinentDto = offreM.FkContinentM,
                 FkPaysDto = offreM.FkPaysM,
                 FkEquipeDto = offreM.FkEquipeM,
-                FkPositionDto = new PositionModels(offreM.IdJoueurM).ListePosition.FirstOrDefault().IdM,
+                FkPositionDto = offreM.FkPositionM,
                 IdJoueurDto = offreM.IdJoueurM,
                 PrixOffreDto = offreM.PrixOffreM });
         }

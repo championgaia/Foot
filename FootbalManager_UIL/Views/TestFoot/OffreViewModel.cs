@@ -9,22 +9,28 @@ namespace FootbalManager_UIL
 {
     public class OffreViewModel
     {
-        public JoueurModel JoueurVM { get; set; }
-        public ContinentModel ContinentVM { get; set; }
-        public PaysModel PaysVM { get; set; }
-        public EquipeModel EquipeVM { get; set; }
-        public double PrixOffreVM { get; set; }
-        public string Message { get; set; } = "OK";
+        public OffreModel OffreModelVM { get; set; }
+        #region Constructeur par déffaut
+        public OffreViewModel() { }
+        #endregion
+        #region Constructeur avec params
+        public OffreViewModel(int idContinent, int idPays, int idEquipe, int idJoueur, int idPosition, double prixOffre)
+        {
+            OffreModelVM = new OffreModel
+            {
+                IdJoueurM = idJoueur,
+                FkContinentM = idContinent,
+                FkPaysM = idPays,
+                FkEquipeM = idEquipe,
+                FkPositionM = idPosition,
+                PrixOffreM = prixOffre
+            };
+        }
+        #endregion
         #region Faire une offre
         public bool CreateOffreViewModel(OffreViewModel offreVM)
         {
-            var offreModel = new OffreModel();
-            return offreModel.CreateOffreModel(new OffreModel {
-                FkContinentM = offreVM.ContinentVM.IdM,
-                FkEquipeM = offreVM.EquipeVM.IdM,
-                FkPaysM = offreVM.PaysVM.IdM,
-                IdJoueurM = offreVM.JoueurVM.IdM,
-                PrixOffreM = offreVM.PrixOffreVM });
+            return OffreModelVM.CreateOffreModel(offreVM.OffreModelVM);
         }
         #endregion
     }

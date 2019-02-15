@@ -49,11 +49,9 @@ namespace FootbalManager_UIL.Controllers
         }
         // Create: Offre
         [HttpGet]
-        public ActionResult CreateOffre(int idContinent, int idPays, int idEquipe, int idJoueur, string message)
+        public ActionResult CreateOffre(int idContinent, int idPays, int idEquipe, int idJoueur, int idPosition, string message)
         {
-            var position = new PositionModels(idJoueur).ListePosition.FirstOrDefault();
-            var joueur = new JoueurViewModel(idContinent, idPays, idEquipe, position.IdM, idJoueur).Joueur;
-            var equipe = new ContinentPaysEquipeViewModel(idContinent, idPays, idEquipe).ListeEquipeVM.FirstOrDefault();
+            var joueur = new JoueurViewModel(idContinent, idPays, idEquipe, idPosition, idJoueur).Joueur;
             var offreVM = new MakeOffreViewModel
             {
                 FkContinentVM = idContinent,
@@ -61,9 +59,9 @@ namespace FootbalManager_UIL.Controllers
                 FkEquipeVM = idEquipe,
                 IdJoueurVM = idJoueur,
                 Message = message,
-                FkPositionVM = position.IdM,
-                NomPositionVM = position.NomPositionM,
-                NomEquipeVM = equipe.NomEquipeM,
+                FkPositionVM = idPosition,
+                NomPositionVM = joueur.PositionM,
+                NomEquipeVM = joueur.NomEquipeM,
                 NomJoueurVM = joueur.NomJoueurM,
                 PreNomJoueurVM = joueur.PrenomM
             };
@@ -78,33 +76,27 @@ namespace FootbalManager_UIL.Controllers
             var idEquipe = makeOffreVM.FkEquipeVM;
             var idJoueur = makeOffreVM.IdJoueurVM;
             var idPosition = makeOffreVM.FkPositionVM;
-            var offreVM = new OffreViewModel
-            {
-                JoueurVM = new JoueurViewModel(idContinent, idPays, idEquipe, idPosition, idJoueur).Joueur,
-                EquipeVM = new ContinentPaysEquipeViewModel(idContinent, idPays, idEquipe).ListeEquipeVM.FirstOrDefault(),
-                ContinentVM = new ContinentViewModel(idContinent).ContinentVM,
-                PaysVM = new ContinentPaysViewModel(idContinent, idPays).ListePaysVM.FirstOrDefault(),
-                PrixOffreVM = makeOffreVM.PrixOffreVM,
-                Message = makeOffreVM.Message
-            };
+            var prixOffre = makeOffreVM.PrixOffreVM;
+            var offreVM = new OffreViewModel(idContinent, idPays, idEquipe, idPosition, idJoueur, prixOffre);
             if (offreVM.CreateOffreViewModel(offreVM))
                 return RedirectToAction("CreateTransfer", new
                 {
-                    idContinent = offreVM.ContinentVM.IdM,
-                    idPays = offreVM.PaysVM.IdM,
-                    idEquipe = offreVM.EquipeVM.IdM,
-                    idJoueur = offreVM.JoueurVM.IdM,
-                    prixTransfer = offreVM.PrixOffreVM
+                    idContinent,
+                    idPays,
+                    idEquipe,
+                    idJoueur,
+                    prixTransfer = prixOffre
                 });
             else
                 return RedirectToAction("CreateOffre", new
                 {
-                    idContinent = offreVM.ContinentVM.IdM,
-                    idPays = offreVM.PaysVM.IdM,
-                    idEquipe = offreVM.EquipeVM.IdM,
-                    idJoueur = offreVM.JoueurVM.IdM,
+                    idContinent,
+                    idPays,
+                    idEquipe,
+                    idJoueur,
                     message = "He is not for sale"
                 });
+            
         }
         // Create: Transfer
         [HttpGet]
