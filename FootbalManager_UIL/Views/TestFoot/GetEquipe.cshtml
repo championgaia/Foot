@@ -87,7 +87,7 @@
                 @Html.DisplayFor(modelItem => item.NomContinentM)
             </td>
             <td>
-                @Html.ActionLink("Choisir", "GetJoueur", new {idContinent = Model.FkContinent , idPays = Model.FkPays, idEquipe = item.IdM }) 
+                @Html.ActionLink("Choisir", "GetJoueur", new {idContinent = item.FkContinentM , idPays = item.FkPaysM, idEquipe = item.IdM }) 
                 
             </td>
         </tr>
@@ -95,5 +95,5 @@
 
 </table>
 <div>
-    @Html.ActionLink("Back", "GetPays", new { idContinent = Model.FkContinent })
+    @Html.ActionLink("Back", "GetPays", new { idContinent = Model.ListeEquipeVM.FirstOrDefault().FkContinentM })
 </div>

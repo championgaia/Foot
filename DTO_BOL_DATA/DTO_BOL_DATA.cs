@@ -68,6 +68,7 @@ namespace DTO_BOL_DATA
         public int FkContinentDto { get; set; }
         public int FkPaysDto { get; set; }
         public int FkEquipeDto { get; set; }
+        public int FkPositionDto { get; set; }
     }
     #endregion
     #region TestSingleton

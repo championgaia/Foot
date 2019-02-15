@@ -32,6 +32,7 @@ namespace JoueurFoot_UIL.Models
         public int FkContinentM { get; set; }
         public int FkPaysM { get; set; }
         public int FkEquipeM { get; set; }
+        public int FkPositionM { get; set; }
     }
     #endregion
     #region JoueurModels : liste des joueurs
@@ -62,7 +63,8 @@ namespace JoueurFoot_UIL.Models
                     NomPrenomAgentM = c.NomPrenomAgentDto,
                     FkContinentM = c.FkContinentDto,
                     FkPaysM = c.FkPaysDto,
-                    FkEquipeM = c.FkEquipeDto
+                    FkEquipeM = c.FkEquipeDto, 
+                    FkPositionM = c.FkPositionDto
                 });
             }
         }

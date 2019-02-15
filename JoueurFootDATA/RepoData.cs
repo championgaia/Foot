@@ -101,7 +101,8 @@ namespace JoueurFootDATA
                     NomPrenomAgentDto = c.NomPrenomAgent,
                     FkContinentDto = c.FkContinent,
                     FkPaysDto = c.FkPays,
-                    FkEquipeDto = c.FkEquipe
+                    FkEquipeDto = c.FkEquipe,
+                    FkPositionDto = c.FkPosition
                 });
             }
             return ListeJoueurDTO;

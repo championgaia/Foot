@@ -35,18 +35,16 @@ namespace FootbalManager_UIL.Controllers
         }
         // Edit: Joueur
         [HttpGet]
-        public ActionResult EditJoueur(int idContinent, int idPays, int idEquipe, int idJoueur)
+        public ActionResult EditJoueur(int idContinent, int idPays, int idEquipe, int idPosition, int idJoueur)
         {
-            var position = new PositionModels(idJoueur).ListePosition.FirstOrDefault();
-            var joueur = new JoueurViewModel(idContinent, idPays, idEquipe, position.IdM, idJoueur);
+            var joueur = new JoueurViewModel(idContinent, idPays, idEquipe, idPosition, idJoueur);
             return View(joueur);
         }
         // Detail: Joueur
         [HttpGet]
-        public ActionResult DetailsJoueur(int idContinent, int idPays, int idEquipe, int idJoueur)
+        public ActionResult DetailsJoueur(int idContinent, int idPays, int idEquipe, int idPosition, int idJoueur)
         {
-            var position = new PositionModels(idJoueur).ListePosition.FirstOrDefault();
-            var joueur = new JoueurViewModel(idContinent, idPays, idEquipe, position.IdM, idJoueur);
+            var joueur = new JoueurViewModel(idContinent, idPays, idEquipe, idPosition, idJoueur);
             return View(joueur);
         }
         // Create: Offre
