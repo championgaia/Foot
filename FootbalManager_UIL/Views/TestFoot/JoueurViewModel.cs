@@ -8,7 +8,7 @@ namespace FootbalManager_UIL
 {
     public class JoueurViewModel
     {
-        public JoueurModel Joueur { get; set; }
+        public JoueurModel JoueurVM { get; set; }
         #region Constructor par deffaut
         public JoueurViewModel() { }
         #endregion
@@ -16,7 +16,7 @@ namespace FootbalManager_UIL
         public JoueurViewModel(int idContinent, int idPays, int idEquipe, int idPosition, int idJoueur)
         {
             JoueurModels joueurs = new JoueurModels(idContinent, idPays, idEquipe, idPosition, idJoueur);
-            Joueur = joueurs.ListeJoueurM.FirstOrDefault();
+            JoueurVM = joueurs.ListeJoueurM.FirstOrDefault();
         }
         #endregion
     }

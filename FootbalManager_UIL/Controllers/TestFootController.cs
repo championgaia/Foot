@@ -114,13 +114,22 @@ namespace FootbalManager_UIL.Controllers
         {
             var tranferVM = new TranferViewModel
             {
-                JoueurVM = new JoueurViewModel(idContinent, idPays, idEquipe, -1, idJoueur).Joueur,
+                JoueurVM = new JoueurViewModel(idContinent, idPays, idEquipe, -1, idJoueur).JoueurVM,
                 OldEquipeVM = new ContinentPaysEquipeViewModel(idContinent, idPays, idEquipe).ListeEquipeVM.FirstOrDefault(),
                 PrixTransferVM = prixTransfer,
                 PrixSupVM = prixTransfer * 2 / 10
             };
             return View(tranferVM);
         }
-        #endregion  
+        #endregion
+        #region createTranfer
+        // Create: Transfer
+        [HttpPost]
+        public ActionResult CreateTransfer(TranferViewModel transfer)
+        {
+            transfer.MakeTransferVM(transfer);
+            return RedirectToAction("Index");
+        }
+        #endregion
     }
 }

@@ -56,54 +56,54 @@
 
     <tr>
         <td>
-            @Html.DisplayFor(model => model.Joueur.IdM)
+            @Html.DisplayFor(model => model.JoueurVM.IdM)
         </td>
         <td>
-            @Html.DisplayFor(model => model.Joueur.NomJoueurM)
+            @Html.DisplayFor(model => model.JoueurVM.NomJoueurM)
         </td>
         <td>
-            @Html.DisplayFor(model => model.Joueur.PrenomM)
+            @Html.DisplayFor(model => model.JoueurVM.PrenomM)
         </td>
         <td>
-            @Html.DisplayFor(model => model.Joueur.DateNaissanceM)
+            @Html.DisplayFor(model => model.JoueurVM.DateNaissanceM)
         </td>
         <td>
-            @Html.DisplayFor(model => model.Joueur.DateDebutContratM)
+            @Html.DisplayFor(model => model.JoueurVM.DateDebutContratM)
         </td>
         <td>
-            @Html.DisplayFor(model => model.Joueur.DateFinContratM)
+            @Html.DisplayFor(model => model.JoueurVM.DateFinContratM)
         </td>
         <td>
-            @Html.DisplayFor(model => model.Joueur.SalaireHebdomadaireM)
+            @Html.DisplayFor(model => model.JoueurVM.SalaireHebdomadaireM)
         </td>
         <td>
-            @Html.DisplayFor(model => model.Joueur.TailleM)
+            @Html.DisplayFor(model => model.JoueurVM.TailleM)
         </td>
         <td>
-            @Html.DisplayFor(model => model.Joueur.PoidM)
+            @Html.DisplayFor(model => model.JoueurVM.PoidM)
         </td>
         <td>
-            @Html.DisplayFor(model => model.Joueur.NomEquipeM)
+            @Html.DisplayFor(model => model.JoueurVM.NomEquipeM)
         </td>
         <td>
-            @Html.DisplayFor(model => model.Joueur.NomPaysM)
+            @Html.DisplayFor(model => model.JoueurVM.NomPaysM)
         </td>
         <td>
-            @Html.DisplayFor(model => model.Joueur.NomPrenomAgentM)
+            @Html.DisplayFor(model => model.JoueurVM.NomPrenomAgentM)
         </td>
         <td>
             @Html.ActionLink("Edit", "EditJoueur", new {
-           idContinent = Model.Joueur.FkContinentM,
-           idPays = Model.Joueur.FkPaysM,
-           idEquipe = Model.Joueur.FkEquipeM,
-           idPosition = Model.Joueur.FkPositionM,
-           idJoueur = Model.Joueur.IdM }) |
+           idContinent = Model.JoueurVM.FkContinentM,
+           idPays = Model.JoueurVM.FkPaysM,
+           idEquipe = Model.JoueurVM.FkEquipeM,
+           idPosition = Model.JoueurVM.FkPositionM,
+           idJoueur = Model.JoueurVM.IdM }) |
             @Html.ActionLink("Make an offer", "CreateOffre", new {
-           idContinent = Model.Joueur.FkContinentM,
-           idPays = Model.Joueur.FkPaysM,
-           idEquipe = Model.Joueur.FkEquipeM,
-           idPosition = Model.Joueur.FkPositionM,
-           idJoueur = Model.Joueur.IdM,
+           idContinent = Model.JoueurVM.FkContinentM,
+           idPays = Model.JoueurVM.FkPaysM,
+           idEquipe = Model.JoueurVM.FkEquipeM,
+           idPosition = Model.JoueurVM.FkPositionM,
+           idJoueur = Model.JoueurVM.IdM,
            message = "Make your offer!" }) |
            
         </td>
@@ -113,8 +113,8 @@
 </table>
 <div>
     @Html.ActionLink("Back to List", "GetJoueur", new {
-          idContinent = Model.Joueur.FkContinentM,
-          idPays = Model.Joueur.FkPaysM,
-          idEquipe = Model.Joueur.FkEquipeM
+          idContinent = Model.JoueurVM.FkContinentM,
+          idPays = Model.JoueurVM.FkPaysM,
+          idEquipe = Model.JoueurVM.FkEquipeM
       } )
 </div>

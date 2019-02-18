@@ -14,5 +14,20 @@ namespace FootbalManager_UIL
         public EquipeModel NewEquipeVM { get; set; }
         public double PrixTransferVM { get; set; }
         public double PrixSupVM { get; set; }
+        #region MakeTransfer
+        public void MakeTransferVM(TranferViewModel transfer)
+        {
+            var joueur = transfer.JoueurVM;
+            JoueurVM.MakeTransferM(new JoueurModel
+            {
+                IdM = joueur.IdM,
+                DateDebutContratM = joueur.DateDebutContratM,
+                DateFinContratM = joueur.DateFinContratM,
+                SalaireHebdomadaireM = joueur.SalaireHebdomadaireM,
+                PrixMaxM = joueur.PrixMaxM,
+                FkEquipeM = NewEquipeVM.IdM,
+            });
+        }
+        #endregion
     }
 }
