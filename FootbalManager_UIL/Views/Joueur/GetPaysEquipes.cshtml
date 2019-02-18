@@ -1,0 +1,98 @@
+﻿@model FootbalManager_UIL.PaysEquipeViewModel
+
+@{
+    ViewBag.Title = "GetPaysEquipes";
+}
+
+<h2>GetPaysEquipes</h2>
+<!-- #region name -->
+@{
+    List<SelectListItem> listPays = new List<SelectListItem>();
+}
+@foreach (var item in Model.ListePaysVM)
+{
+    listPays.Add(new SelectListItem
+    {
+        Text = item.NomPaysM,
+        Value = item.IdM.ToString()
+    });
+}
+@{
+    List<SelectListItem> listEquipe = new List<SelectListItem>();
+}
+@foreach (var item in Model.ListeEquipeVM)
+{
+    listEquipe.Add(new SelectListItem
+    {
+        Text = item.NomEquipeM,
+        Value = item.IdM.ToString()
+    });
+}
+@{
+    List<SelectListItem> listJoueur = new List<SelectListItem>();
+}
+@foreach (var item in Model.ListeJoueurVM)
+{
+    listJoueur.Add(new SelectListItem
+    {
+        Text = item.NomJoueurM,
+        Value = item.IdM.ToString()
+    });
+}
+@{ 
+    var myPays = Model.ListePaysVM;
+    var myEquipe = Model.ListeEquipeVM;
+}
+
+@Html.Hidden("myContinentId", myPays.FirstOrDefault().FkContinentM)
+@Html.Hidden("myPaysId", myPays.Count>1 ? 0 : myPays.FirstOrDefault().IdM)
+@Html.Hidden("myEquipeId", myEquipe.Count>1 ? 0 : myEquipe.FirstOrDefault().IdM)
+<p>
+    @Html.DropDownList("DDlPays",
+                        new SelectList(listPays, "Value", "Text"),
+                        new { @class = "optionPays alert-danger", @id = "DDLPays" , @onchange = "clickPays(this.value);" }) |
+    @Html.DropDownList("DDlEquipe",
+                        new SelectList(listEquipe, "Value", "Text"),
+                        new { @class = "optionEquipe alert-danger", @id = "DDlEquipe", @onchange = "clickEquipe(this.value);" }) |
+    @Html.DropDownList("DDlJoueur",
+                        new SelectList(listJoueur, "Value", "Text"),
+                        new { @class = "optionJoueur alert-danger", @id = "DDlJoueur", @onchange = "clickJoueur(this.value);" })
+</p>
+<p>
+    @Html.DropDownListFor(model => model.ListePaysVM, new SelectList(Model.ListePaysVM, "IdM","NomPaysM"),
+    new { @class = "optionPays", @id = "DDLPays", @onchange = "clickPays(this.value,);" }) |
+    @Html.DropDownListFor(model => model.ListeEquipeVM, new SelectList(Model.ListeEquipeVM, "IdM","NomEquipeM"),
+    new { @class = "optionEquipe", @id = "DDlEquipe", @onchange = "clickEquipe(this.value,);" }) |
+    @Html.DropDownListFor(model => model.ListeJoueurVM, new SelectList(Model.ListeJoueurVM, "IdM", "NomJoueurM"),
+   new { @class = "optionJoueur", @id = "DDlJoueur", @onchange = "clickJoueur(this.value,);" })
+</p>
+<!-- #endregion -->
+
+<div>
+    @Html.ActionLink("Back", "Index", new { /* id=item.PrimaryKey */ })
+</div>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+<script>
+    var HOST = "http://localhost:56961/Joueur/";
+    $("document").ready(function () { startMe(); });
+    function startMe() {
+    }
+    //select on DDL continent, open another view on choiced continent
+    function clickPays(idPays) {
+        var idContinent = $('#myContinentId').val();
+        var idPays = $('#myPaysId').val();
+        var idEquipe = $('#myEquipeId').val();
+        window.open(HOST + "GetPaysEquipes?idContinent=" + idContinent + "&idPays=" + idPays + "&idEquipe=" + idEquipe, "_parent");
+    }
+    var HOST = "http://localhost:56961/Joueur/";
+    $("document").ready(function () { startMe(); });
+    function startMe() {
+    }
+    //select on DDL continent, open another view on choiced continent
+    function clickMe(idEquipe) {
+        var idContinent = $('#myContinentId').val();
+        var idPays = $('#myPaysId').val();
+        window.open(HOST + "GetJoueurs?idContinent=" + idContinent + "&idPays=" + idPays + "&idEquipe=" + idEquipe, "_parent");
+    }
+</script>

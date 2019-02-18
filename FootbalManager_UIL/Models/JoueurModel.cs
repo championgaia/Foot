@@ -33,12 +33,12 @@ namespace JoueurFoot_UIL.Models
         public int FkPaysM { get; set; }
         public int FkEquipeM { get; set; }
         public int FkPositionM { get; set; }
-
+        #region MakeTransferM
         public void MakeTransferM(JoueurModel joueurModel)
         {
             throw new NotImplementedException();
         }
-
+        #endregion
     }
     #endregion
     #region JoueurModels : liste des joueurs

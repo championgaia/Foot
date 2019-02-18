@@ -20,6 +20,28 @@ namespace FootbalManager_UIL.Controllers
             var listeId = new ListIdViewModel(idContinent, idPays, idEquipe, idPosition, idJoueur);
             return View(listeId);
         }
-
+        // GET: Continents
+        public ActionResult GetContinents()
+        {
+            return View();
+        }
+        // GET: Pays by idContinent
+        public ActionResult GetPays(int idContinent)
+        {
+            var listePays = new ContinentPaysViewModel(idContinent);
+            return View(listePays);
+        }
+        // GET: Equipe by IdPays
+        public ActionResult GetEquipes(int idContinent, int idPays)
+        {
+            var listeEquipe = new ContinentPaysEquipeViewModel(idContinent, idPays);
+            return View(listeEquipe);
+        }
+        // GET: Pays, Equipe by IdContinent, IdPays
+        public ActionResult GetPaysEquipes(int idContinent, int idPays)
+        {
+            var listePaysEquipe = new PaysEquipeViewModel(idContinent, idPays);
+            return View(listePaysEquipe);
+        }
     }
 }

@@ -57,9 +57,25 @@
                 @Html.DisplayFor(modelItem => item.NomPrenomAgentM)
             </td>
             <td>
-                @Html.ActionLink("Edit", "EditJoueur", new { idContinent = item.FkContinentM, idPays = item.FkPaysM, idEquipe = item.FkEquipeM, idPosition = item.FkPositionM, idJoueur = item.IdM }) |
-                @Html.ActionLink("Details", "DetailsJoueur", new { idContinent = item.FkContinentM, idPays = item.FkPaysM, idEquipe = item.FkEquipeM, idPosition = item.FkPositionM, idJoueur = item.IdM })
-                
+                @Html.ActionLink("Edit", "EditJoueur", new {
+               idContinent = item.FkContinentM,
+               idPays = item.FkPaysM,
+               idEquipe = item.FkEquipeM,
+               idPosition = item.FkPositionM,
+               idJoueur = item.IdM }) |
+                @Html.ActionLink("Details", "DetailsJoueur", new {
+               idContinent = item.FkContinentM,
+               idPays = item.FkPaysM,
+               idEquipe = item.FkEquipeM,
+               idPosition = item.FkPositionM,
+               idJoueur = item.IdM })
+                @Html.ActionLink("Make an offer", "CreateOffre", new {
+           idContinent = item.FkContinentM,
+           idPays = item.FkPaysM,
+           idEquipe = item.FkEquipeM,
+           idPosition = item.FkPositionM,
+           idJoueur = item.IdM,
+           message = "Make your offer!" })
             </td>
         </tr>
     }

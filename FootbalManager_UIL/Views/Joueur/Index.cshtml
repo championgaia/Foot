@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Index";
 }
-var idContinent, idPays = 0, idEquipe = 0, idPosition = 0, idJoueur = 0;
+
 @{
     List<SelectListItem> listContinent = new List<SelectListItem>();
 }
@@ -30,12 +30,13 @@ var idContinent, idPays = 0, idEquipe = 0, idPosition = 0, idJoueur = 0;
 <h2>Index</h2>
 <p>
     @Html.ActionLink("Create New", "Create") |
-    @Html.DropDownList("DDlContinent", 
-                        new SelectList(listContinent, "Value", "Text"), 
+    @Html.DropDownList("DDlContinent",
+                        new SelectList(listContinent, "Value", "Text"),
                         new { @class = "optionContinent alert-danger", @id = "DDlContinent", onchange = "clickMe();"}) |
     @Html.DropDownList("DDlPays", new SelectList(listPays, "Value", "Text")) |
     @Html.TextBox("Autocomplete")
 </p>
+@Html.ActionLink("GetContinents", "GetContinents", new { idContinent = 0 })
 <table class="table table-bordered table-striped table-dark table-responsive">
     <tr>
         <th>
@@ -100,28 +101,17 @@ var idContinent, idPays = 0, idEquipe = 0, idPosition = 0, idJoueur = 0;
             </td>
             <td class="actionLink">
                 @Html.ActionLink("Edit", "EditJoueur", new { idJoueur = item.IdM }) |
-                @Html.ActionLink("Details", "DetailsJoueur", new { idJoueur = item.IdM }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Details", "DetailsJoueur", new { idJoueur = item.IdM })
+
 
             </td>
         </tr>
+
     }
 
 </table>
 
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
-<script>
-    $("document").ready();
-    function startMe() {
 
-    }
-    //select on DDL continent, open another view on choiced continent
-    function clickMe() {
-        idContinent = $('.optionContinent').val();
-        //window.open("http://localhost:56961/Joueur/Index?idContinent="+ idContinent);
-        //@Html.ActionLink("Get", "Index", new { idContinent = 0, idPays = 0, idEquipe = 0, idPosition = 0, idJoueur = 0 })
-        
-    }
-</script>
 

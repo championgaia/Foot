@@ -22,7 +22,7 @@ namespace JoueurFootBOL
             else if ((offre.PrixOffre > joueur.PrixMax) && (joueur.PrixMax != null))
                 return true;
             else
-                return Rnd.Next(1,4)>=2;
+                return Rnd.Next(1,4)>2;
         }
         #endregion
     }

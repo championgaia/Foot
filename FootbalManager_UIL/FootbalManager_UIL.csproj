@@ -194,6 +194,7 @@
     <Compile Include="Models\Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Views\Joueur\PaysEquipeViewModel.cs" />
     <Compile Include="Views\TestFoot\ContinentPaysEquipeViewModel.cs" />
     <Compile Include="Views\TestFoot\ContinentPaysViewModel.cs" />
     <Compile Include="Views\TestFoot\EquipeViewModel.cs" />
@@ -321,6 +322,10 @@
     <Content Include="Views\TestFoot\CreateOffre.cshtml" />
     <Content Include="Views\TestFoot\EditEquipe.cshtml" />
     <Content Include="Views\TestFoot\DetailsEquipe.cshtml" />
+    <Content Include="Views\Joueur\GetPays.cshtml" />
+    <Content Include="Views\Joueur\GetContinents.cshtml" />
+    <Content Include="Views\Joueur\GetEquipes.cshtml" />
+    <Content Include="Views\Joueur\GetPaysEquipes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

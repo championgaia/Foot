@@ -1,0 +1,47 @@
+﻿@model FootbalManager_UIL.ContinentPaysEquipeViewModel
+
+@{
+    ViewBag.Title = "GetEquipes";
+}
+
+<h2>GetEquipes</h2>
+@{
+    List<SelectListItem> listEquipe = new List<SelectListItem>();
+}
+@foreach (var item in Model.ListeEquipeVM)
+{
+    listEquipe.Add(new SelectListItem
+    {
+        Text = item.NomEquipeM,
+        Value = item.IdM.ToString()
+    });
+}
+
+@Html.Hidden("myContinentId", Model.ListeEquipeVM.FirstOrDefault().FkContinentM)
+@Html.Hidden("myPaysId", Model.ListeEquipeVM.FirstOrDefault().FkPaysM)
+<p>
+    @Html.DropDownList("DDlEquipe",
+                        new SelectList(listEquipe, "Value", "Text"),
+                        new { @class = "optionEquipe alert-danger", @id = "DDlEquipe", @onchange = "clickMe(this.value);" })
+</p>
+<p>
+    @Html.DropDownListFor(model => model.ListeEquipeVM, new SelectList(Model.ListeEquipeVM, "IdM","NomEquipeM"),
+    new { @class = "optionEquipe", @id = "DDlEquipe", @onchange = "clickMe(this.value,);" })
+</p>
+<div>
+    @Html.ActionLink("Back", "Index", new { /* id=item.PrimaryKey */ })
+</div>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+<script>
+    var HOST = "http://localhost:56961/Joueur/";
+    $("document").ready(function () { startMe(); });
+    function startMe() {
+    }
+    //select on DDL continent, open another view on choiced continent
+    function clickMe(idEquipe) {
+        var idContinent = $('#myContinentId').val();
+        var idPays = $('#myPaysId').val();
+        window.open(HOST + "GetJoueurs?idContinent=" + idContinent + "&idPays=" + idPays + "&idEquipe=" + idEquipe, "_parent");
+    }
+</script>

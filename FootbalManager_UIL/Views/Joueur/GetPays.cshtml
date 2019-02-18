@@ -1,0 +1,45 @@
+﻿@model FootbalManager_UIL.ContinentPaysViewModel
+
+@{
+    ViewBag.Title = "GetPays";
+
+}
+
+@{
+    List<SelectListItem> listPays = new List<SelectListItem>();
+}
+@foreach (var item in Model.ListePaysVM)
+{
+    listPays.Add(new SelectListItem
+    {
+        Text = item.NomPaysM,
+        Value = item.IdM.ToString()
+    });
+}
+<h2>GetPays</h2>
+@Html.Hidden("myContinentId", Model.ListePaysVM.FirstOrDefault().FkContinentM)
+<p>
+    @Html.DropDownList("DDlPays",
+                        new SelectList(listPays, "Value", "Text"),
+                        new { @class = "optionPays alert-danger", @id = "DDLPays" , @onchange = "clickMe(this.value);" })
+</p>
+<p>
+    @Html.DropDownListFor(model => model.ListePaysVM, new SelectList(Model.ListePaysVM, "IdM","NomPaysM"),
+    new { @class = "optionPays", @id = "DDLPays", @onchange = "clickMe(this.value,);" })
+</p>
+<div>
+    @Html.ActionLink("Back", "Index", new { /* id=item.PrimaryKey */ })
+</div>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+<script>
+    var HOST = "http://localhost:56961/Joueur/";
+    $("document").ready(function () { startMe(); });
+    function startMe() {
+    }
+    //select on DDL continent, open another view on choiced continent
+    function clickMe(idPays) {
+        var idContinent = $('#myContinentId').val();
+        window.open(HOST + "GetEquipes?idContinent=" + idContinent+"&idPays="+ idPays, "_parent");
+    }
+</script>

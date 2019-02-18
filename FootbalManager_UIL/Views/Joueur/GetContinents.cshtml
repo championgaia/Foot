@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "GetContinents";
+}
+
+<h2>GetContinents</h2>
+
+<script src="~/Scripts/bootstrap.min.js"></script>
+<h2>Index</h2>
+<input type="button" class="btn" id="btnContinent" name="Afrique" value="1" onclick="clickMe(value);" />
+<input type="button" class="btn" id="btnContinent" name="Amerique" value="2" onclick="clickMe(value);" />
+<input type="button" class="btn" id="btnContinent" name="Asie" value="3" onclick="clickMe(value);" />
+<input type="button" class="btn" id="btnContinent" name="Europe" value="4" onclick="clickMe(value);" />
+<input type="button" class="btn" id="btnContinent" name="Océanie" value="5" onclick="clickMe(value);" />
+<script>
+    function clickMe(number) {
+        location.href = '@Url.Action("GetPaysEquipes", "Joueur")?idContinent=' + number +"&idPays=" + 0;
+    }
+</script>
